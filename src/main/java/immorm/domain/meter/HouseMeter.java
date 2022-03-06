@@ -15,12 +15,8 @@ import javax.persistence.*;
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @EqualsAndHashCode(callSuper = true)
-@MappedSuperclass
+@DiscriminatorValue(value = "house_meter")
 public class HouseMeter extends Meter {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "house_meter_id")
-    int id;
 
     @ManyToOne
     @JoinColumn(name = "FK_Meter_House")

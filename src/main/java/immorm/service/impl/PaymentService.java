@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class PaymentService implements CRUDService<Payment> {
 
-    PaymentRepository repository;
+    PaymentRepository<Payment> repository;
 
     @Override
     public void save(Payment payment) {
@@ -29,6 +29,11 @@ public class PaymentService implements CRUDService<Payment> {
 
     @Override
     public void deleteById(int id) {
-        deleteById(id);
+        repository.deleteById(id);
+    }
+
+    @Override
+    public Payment findById(int id) {
+        return repository.findById(id).get();
     }
 }

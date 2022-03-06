@@ -32,4 +32,9 @@ public class AppartmentService implements CRUDService<Appartment> {
     public void deleteById(int id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public Appartment findById(int id) {
+        return repository.findById(id).get();
+    }
 }

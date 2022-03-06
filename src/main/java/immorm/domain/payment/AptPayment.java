@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = true)
 @DiscriminatorValue(value = "apt_payment")
 public class AptPayment extends Payment {
 

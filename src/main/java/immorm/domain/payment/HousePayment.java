@@ -18,7 +18,7 @@ import javax.persistence.ManyToOne;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = true)
 @DiscriminatorValue(value = "house_payment")
 public class HousePayment extends Payment {
 

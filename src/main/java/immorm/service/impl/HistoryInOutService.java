@@ -1,9 +1,7 @@
 package immorm.service.impl;
 
-import immorm.domain.Comment;
-import immorm.domain.history.History;
-import immorm.repository.CommentRepository;
-import immorm.repository.HistoryRepository;
+import immorm.domain.HistoryInOut;
+import immorm.repository.HistoryInOutRepository;
 import immorm.service.CRUDService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -13,22 +11,27 @@ import org.springframework.stereotype.Service;
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @AllArgsConstructor
-public class HistoryService implements CRUDService<History> {
+public class HistoryInOutService implements CRUDService<HistoryInOut> {
 
-    HistoryRepository repository;
+    HistoryInOutRepository repository;
 
     @Override
-    public void save(History history) {
+    public void save(HistoryInOut history) {
         repository.save(history);
     }
 
     @Override
-    public void update(History history) {
+    public void update(HistoryInOut history) {
         repository.save(history);
     }
 
     @Override
     public void deleteById(int id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public HistoryInOut findById(int id) {
+        return repository.findById(id).get();
     }
 }

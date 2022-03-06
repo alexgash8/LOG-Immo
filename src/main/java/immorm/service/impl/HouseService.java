@@ -1,8 +1,6 @@
 package immorm.service.impl;
 
 import immorm.domain.House;
-import immorm.domain.history.History;
-import immorm.repository.HistoryRepository;
 import immorm.repository.HouseRepository;
 import immorm.service.CRUDService;
 import lombok.AccessLevel;
@@ -30,5 +28,10 @@ public class HouseService implements CRUDService<House> {
     @Override
     public void deleteById(int id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public House findById(int id) {
+        return repository.findById(id).get();
     }
 }

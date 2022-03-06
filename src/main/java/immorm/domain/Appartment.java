@@ -1,7 +1,6 @@
 package immorm.domain;
 
 import immorm.domain.address.Address;
-import immorm.domain.meter.Meter;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -22,9 +21,6 @@ public class Appartment {
     @Column(name = "apt_id")
     int id;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
-    Address address;
-
     int number;
 
     BigDecimal square;
@@ -34,13 +30,19 @@ public class Appartment {
 
     BigDecimal price;
 
+    @OneToOne
+    @JoinColumn(name = "FK_Apt_Address")
+    Address address;
+
     @Column(name = "oper_cost")
     BigDecimal operatingCosts;
 
-    boolean free;
-
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, mappedBy = "appartment")
     Set<Comment> comments;
+
+    @ManyToOne
+    @JoinColumn(name = "FK_Apt_House")
+    House house;
 
 }
 

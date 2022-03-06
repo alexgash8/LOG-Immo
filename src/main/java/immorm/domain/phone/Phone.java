@@ -20,6 +20,8 @@ public class Phone {
     @Column(name = "phone_id")
     int id;
 
+    String number;
+
     @Enumerated(EnumType.STRING)
     PhoneType type;
 

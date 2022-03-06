@@ -1,12 +1,10 @@
 package immorm.domain;
 
 import immorm.domain.address.Address;
-import immorm.domain.payment.Payment;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Builder
@@ -22,6 +20,7 @@ public class House {
     int id;
 
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
+    @JoinColumn(name = "FK_House_Address")
     Address address;
 
     int countAppartments;

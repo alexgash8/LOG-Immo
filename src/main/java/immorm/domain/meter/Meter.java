@@ -13,10 +13,18 @@ import java.util.Set;
 @NoArgsConstructor
 @Setter
 @Getter
+@Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @EqualsAndHashCode
-@MappedSuperclass
-public abstract class Meter {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "meter_type")
+@Table(name = "meters")
+public class Meter {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "meter_id")
+    int id;
 
     String number;
 

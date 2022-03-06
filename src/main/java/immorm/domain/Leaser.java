@@ -1,14 +1,12 @@
 package immorm.domain;
 
 import immorm.domain.address.Address;
-import immorm.domain.payment.Payment;
 import immorm.domain.phone.Phone;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Builder
@@ -34,15 +32,19 @@ public class Leaser {
     String email;
 
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
+    @JoinColumn(name = "FK_Leaser_LAddress")
     Address lastAddress;
 
-    @OneToOne(mappedBy = "leaser")
+    @OneToOne
+    @JoinColumn(name = "FK_Leaser_Apt")
     Appartment appartment;
 
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
+    @JoinColumn(name = "FK_Leaser_FAddress")
     Address futureAddress;
 
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
+    @JoinColumn(name = "FK_Leaser_Account")
     BankAccount bankAccount;
 
     @Column(name = "count_people")

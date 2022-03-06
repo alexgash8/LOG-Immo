@@ -1,8 +1,7 @@
 package immorm.service.impl;
 
-import immorm.domain.history.History;
+import immorm.domain.meter.AppartmentMeter;
 import immorm.domain.meter.Meter;
-import immorm.repository.HistoryRepository;
 import immorm.repository.MeterRepository;
 import immorm.service.CRUDService;
 import lombok.AccessLevel;
@@ -15,7 +14,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class MeterService implements CRUDService<Meter> {
 
-    MeterRepository repository;
+    MeterRepository<Meter> repository;
 
     @Override
     public void save(Meter meter) {
@@ -29,6 +28,12 @@ public class MeterService implements CRUDService<Meter> {
 
     @Override
     public void deleteById(int id) {
-        deleteById(id);
+
+        repository.deleteById(id);
+    }
+
+    @Override
+    public Meter findById(int id) {
+        return repository.findById(id).get();
     }
 }

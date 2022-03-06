@@ -29,4 +29,9 @@ public class CommentService implements CRUDService<Comment> {
     public void deleteById(int id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public Comment findById(int id) {
+        return repository.findById(id).get();
+    }
 }
