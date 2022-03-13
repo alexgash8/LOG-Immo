@@ -1,0 +1,10 @@
+{
+  "id": 0,
+  "date": "2021-07-05",
+  "name": "gas juli Hashynskiy",
+  "ammount": 1325.4,
+  "@type": "AptPayment",
+  "leaser": {
+    "id": 45
+  }
+}

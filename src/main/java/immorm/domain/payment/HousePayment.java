@@ -20,7 +20,8 @@ import javax.persistence.ManyToOne;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @EqualsAndHashCode(callSuper = true)
 @DiscriminatorValue(value = "house_payment")
-public class HousePayment extends Payment {
+public class
+HousePayment extends Payment {
 
     @ManyToOne
     @JoinColumn(name = "FK_Payment_House")

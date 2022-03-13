@@ -1,0 +1,30 @@
+{
+  "id": 0,
+  "number": 15,
+  "square": 46.5,
+  "roomCount": 3,
+  "price": 750,
+  "operatingCosts": 250,
+  "house": {
+    "id": 36
+  },
+  "address": {
+    "id":0,
+    "street": "Pushkina",
+    "houseNumber": 10,
+    "type":"CURRENT",
+    "postalCode":"51273"
+  },
+  "comments": [
+    {
+      "id": 0,
+      "date": "2022-10-05",
+      "text": "sehr angenehm Mensch"
+    },
+    {
+      "id": 0,
+      "date": "2021-07-05",
+      "text": "sehr angenehm Mensch123"
+    }
+  ]
+}

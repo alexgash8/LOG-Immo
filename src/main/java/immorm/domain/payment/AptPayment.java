@@ -1,5 +1,7 @@
 package immorm.domain.payment;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import immorm.domain.Leaser;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

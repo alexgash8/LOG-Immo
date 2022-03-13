@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Phone {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "phone_id")
     int id;
 

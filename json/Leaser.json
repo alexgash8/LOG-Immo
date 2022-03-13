@@ -1,0 +1,44 @@
+{
+  "id": 0,
+  "firstName": "Alex",
+  "lastName": "Gashinskiy",
+  "price": 750,
+  "operatingCosts": 250,
+  "countPeople": 7,
+  "email": "alexgash8@gmail.com",
+  "bankAccount": {
+    "id": 0,
+    "bankName": "PostBank",
+    "iban": "BE212335134646413",
+    "bic": "1315646415 1346143646"
+  },
+  "lastAddress": {
+    "id":0,
+    "street": "Pushkina",
+    "houseNumber": 10,
+    "type":"HOUSE",
+    "postalCode":"51273"
+  },
+  "futureAddress": {
+    "id":0,
+    "street": "Holsteiner",
+    "houseNumber": 171,
+    "type":"HOUSE",
+    "postalCode":"22457"
+  },
+  "appartment": {
+    "id":38
+  },
+  "phones": [
+    {
+      "id": 0,
+      "number": "0673516001",
+      "type": "HOME"
+    },
+    {
+      "id": 0,
+      "number": "0633772515",
+      "type": "MOBILE"
+    }
+  ]
+}

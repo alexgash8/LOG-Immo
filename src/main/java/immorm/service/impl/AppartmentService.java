@@ -12,14 +12,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @AllArgsConstructor
+@Transactional
 public class AppartmentService implements CRUDService<Appartment> {
 
     AppartmentRepository repository;
+
     @Override
     public void save(Appartment appartment) {
+
+        appartment.getComments().forEach(com -> com.setAppartment(appartment));
+
         repository.save(appartment);
     }
 
@@ -35,6 +39,6 @@ public class AppartmentService implements CRUDService<Appartment> {
 
     @Override
     public Appartment findById(int id) {
-        return repository.findById(id).get();
+        return repository.findById(id);
     }
 }

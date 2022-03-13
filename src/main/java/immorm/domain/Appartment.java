@@ -1,5 +1,7 @@
 package immorm.domain;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import immorm.domain.address.Address;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -15,9 +17,10 @@ import java.util.Set;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Appartment {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "apt_id")
     int id;
 
@@ -30,7 +33,7 @@ public class Appartment {
 
     BigDecimal price;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE})
     @JoinColumn(name = "FK_Apt_Address")
     Address address;
 
@@ -46,11 +49,3 @@ public class Appartment {
 
 }
 
-/*
-* Storage
-* item
-* count
-* price
-* sum_item
-*
-* */

@@ -19,11 +19,15 @@ public class LeaserService implements CRUDService<Leaser> {
 
     @Override
     public void save(Leaser leaser) {
+
+        leaser.getPhones().forEach(phone -> phone.setLeaser(leaser));
+
         repository.save(leaser);
     }
 
     @Override
     public void update(Leaser leaser) {
+
         repository.save(leaser);
     }
 
@@ -34,6 +38,6 @@ public class LeaserService implements CRUDService<Leaser> {
 
     @Override
     public Leaser findById(int id) {
-        return repository.findById(id).get();
+        return repository.findById(id);
     }
 }

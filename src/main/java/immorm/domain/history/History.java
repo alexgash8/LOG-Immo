@@ -24,7 +24,7 @@ import java.time.LocalDate;
 @EqualsAndHashCode
 public class History {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "history_id")
     int id;
 

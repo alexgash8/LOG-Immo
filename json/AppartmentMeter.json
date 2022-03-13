@@ -1,0 +1,22 @@
+{
+  "id": 0,
+  "number": "000000000000002",
+  "meter_type": "HEAT",
+  "amount_type": "OUTCOME",
+  "@type": "AptMeter",
+  "appartment": {
+    "id": 6
+  },
+  "histories": [
+    {
+      "id": 0,
+      "ammount": 25000,
+      "date": "2002-10-23"
+    },
+    {
+      "id": 0,
+      "ammount": 33000,
+      "date": "2009-04-23"
+    }
+  ]
+}

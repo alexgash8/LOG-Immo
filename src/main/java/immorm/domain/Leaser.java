@@ -1,5 +1,7 @@
 package immorm.domain;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import immorm.domain.address.Address;
 import immorm.domain.phone.Phone;
 import lombok.*;
@@ -15,10 +17,11 @@ import java.util.List;
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Leaser {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "leaser_id")
     int id;
 
@@ -26,12 +29,12 @@ public class Leaser {
 
     String lastName;
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, mappedBy = "leaser")
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE}, mappedBy = "leaser")
     List<Phone> phones;
 
     String email;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE}, orphanRemoval = true)
     @JoinColumn(name = "FK_Leaser_LAddress")
     Address lastAddress;
 
@@ -39,11 +42,11 @@ public class Leaser {
     @JoinColumn(name = "FK_Leaser_Apt")
     Appartment appartment;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE}, orphanRemoval = true)
     @JoinColumn(name = "FK_Leaser_FAddress")
     Address futureAddress;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE}, orphanRemoval = true)
     @JoinColumn(name = "FK_Leaser_Account")
     BankAccount bankAccount;
 

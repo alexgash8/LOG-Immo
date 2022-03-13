@@ -1,0 +1,21 @@
+{
+  "id": 0,
+  "number": "11236164335",
+  "meter_type": "HEAT",
+  "house": {
+    "id": 36
+  },
+  "@type":"HMeter",
+  "histories": [
+    {
+      "id": 0,
+      "ammount": 1560.4,
+      "date": "2002-10-23"
+    },
+    {
+      "id": 0,
+      "ammount": 1860.4,
+      "date": "2003-04-23"
+    }
+  ]
+}

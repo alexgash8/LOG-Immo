@@ -25,7 +25,7 @@ public class ImmoCRMApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(ImmoCRMApplication.class, args);
 
-        HouseService houseService = context.getBean(HouseService.class);
+        /*HouseService houseService = context.getBean(HouseService.class);
         AppartmentService appartmentService = context.getBean(AppartmentService.class);
         LeaserService leaserService = context.getBean(LeaserService.class);
         HistoryInOutService historyInOutService = context.getBean(HistoryInOutService.class);
@@ -143,14 +143,14 @@ public class ImmoCRMApplication {
 
         AppartmentMeter appartmentMeter = AppartmentMeter.builder()
                 .appartment(app3)
-                .aType(AmountType.INCOME)
                 .mType(MeterType.WATER)
+                .aType(AmountType.INCOME)
                 .number("ttt132546547")
                 .histories(Set.of(history3))
                 .build();
 
-        meterService.save(houseMeter);
-        meterService.save(appartmentMeter);
+       meterService.save(houseMeter);
+        meterService.save(appartmentMeter);*/
 
     }
 }

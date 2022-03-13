@@ -1,0 +1,12 @@
+{
+  "id": 0,
+  "countAppartments": 17,
+  "insuranceNumber": "new house",
+  "address": {
+    "id":0,
+    "street": "for deleting",
+    "houseNumber": 999,
+    "type":"HOUSE",
+    "postalCode":"99999"
+  }
+}
