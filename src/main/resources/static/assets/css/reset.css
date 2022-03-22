@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    color: var(--black-color-text);
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    line-height: 1.5;
+}
+
+ul[class],ol[class]{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input, button, textarea, select{
+    font:inherit;
+}
+
+input::placeholder{
+    opacity: 1;
+}
+

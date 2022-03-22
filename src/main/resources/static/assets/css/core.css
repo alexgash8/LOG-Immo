@@ -1,0 +1,82 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.btn{
+    border:none;
+    border-radius: 16px;
+    height: 62px;
+    background-color: var(--button-color);
+    padding: 0 24px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--white-color-text);
+    font-weight: 600;
+    transition: all .3s;
+}
+
+.btn:hover{
+    background-color: var(--hover-button);
+}
+
+
+.btn-disabled{
+    cursor: default;
+    background-color: var(--button-color-disabled);
+}
+
+.span-house{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--black-color-text);
+}
+
+select{
+    height: 62px;
+    border-radius: 16px;
+    border: 1px solid #DADADA;
+    padding: 0 24px;
+    transition: all .3s;
+}
+
+select:hover{
+    border-color:var(--hover-select);
+}
+
+.info-data{
+    display: inline-flex;
+    align-items: center;
+    height: 62px;
+    border-radius: 16px;
+    border: 1px solid #DADADA;
+    padding: 0 24px;
+}
+
+.info-block{
+    display: flex;
+    flex-direction: column;
+}
+
+.notation{
+    font-size: 16px;
+    color: var(--label);
+}
+
+.short{
+
+}
+
+.middle{
+
+}
+
+.long{
+
+}
+
+
+
+
+
