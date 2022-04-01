@@ -3,6 +3,19 @@
     margin: 0 auto;
 }
 
+.leaser-connected{
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*align-items: center;*/
+    /*padding: 0px;*/
+
+    /*position: absolute;*/
+    /*width: 1200px;*/
+    /*height: 62px;*/
+    /*left: 120px;*/
+    /*top: 663px;*/
+}
+
 .btn{
     border:none;
     border-radius: 16px;
@@ -59,21 +72,43 @@ select:hover{
     flex-direction: column;
 }
 
+.header-top{
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+}
+
 .notation{
     font-size: 16px;
     color: var(--label);
 }
 
-.short{
+.block-declaration{
+    font-size: 32px;
+    font-weight: 600;
+}
 
+.block-undertext{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.short{
+    width: 80px;
 }
 
 .middle{
-
+    width: 180px;
 }
 
 .long{
+    width: 280px;
+}
 
+.payments-history{
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 64px;
 }
 
 

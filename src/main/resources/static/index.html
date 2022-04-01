@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Immo</title>
+    <title>Immo houses</title>
 </head>
 <link rel="stylesheet" href="assets/css/main.css">
 <body>
 <div class="container">
-
-
 
 
     <header class="header">
@@ -25,7 +23,13 @@
     <div class="house">
         <form action="">
             <div class="house-top">
-                <button disabled class="btn btn-disabled">House block</button>
+                <div class="header-top">
+                    <span class="block-declaration">House block</span>
+                    <span>Here you can find house to create a new one</span>
+                </div>
+                <button class="btn">Create House</button>
+            </div>
+            <div class="house-top find">
                 <span class="span-house">Find house:</span>
                 <select class="house__select" name="" id="">
                     <option value="">1</option>
@@ -33,51 +37,99 @@
                     <option value="">3</option>
                 </select>
                 <button class="btn">Show</button>
-                <button class="btn">Create House</button>
-            </div>
-            <div class="house-info">
-                <div class="info-block">
-                    <span class="notation">ID</span>
-                    <div class="info-data short">02</div>
-                </div>
-                <div class="info-block">
-                    <span class="notation">City</span>
-                    <div class="info-data middle">Hamburg</div>
-                </div>
-                <div class="info-block">
-                    <span class="notation">Street</span>
-                    <div class="info-data long">Holsteiner Chaussee</div>
-                </div>
-                <div class="info-block">
-                    <span class="notation">Number</span>
-                    <div class="info-data short">171</div>
-                </div>
-                <div class="info-block">
-                    <span class="notation">PLZ</span>
-                    <div class="info-data short">22457</div>
-                </div>
-                <div class="info-block">
-                    <span class="notation">Insurance number</span>
-                    <div class="info-data middle">750</div>
-                </div>
             </div>
         </form>
+        <div class="house-info">
+            <div class="info-block">
+                <span class="notation">ID</span>
+                <div class="info-data short">02</div>
+            </div>
+            <div class="info-block">
+                <span class="notation">City</span>
+                <div class="info-data middle">Hamburg</div>
+            </div>
+            <div class="info-block">
+                <span class="notation">Street</span>
+                <div class="info-data long">Holsteiner Chaussee</div>
+            </div>
+            <div class="info-block">
+                <span class="notation">Number</span>
+                <div class="info-data short">171</div>
+            </div>
+            <div class="info-block">
+                <span class="notation">PLZ</span>
+                <div class="info-data short">22457</div>
+            </div>
+            <div class="info-block">
+                <span class="notation">Insurance number</span>
+                <div class="info-data long">750</div>
+            </div>
+        </div>
+        <div class="header-top">
+            <span class="block-declaration">Counter block</span>
+            <span>Here you can find counter to add a new counter to a house</span>
+        </div>
+        <div class="house-top find">
+            <span class="span-house ">Find house:</span>
+            <select class="house__select" name="" id="">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+            </select>
+            <button class="btn">Show</button>
+        </div>
+        <div class="universal-input-block">
+            <div class="info-data">Enter counter name</div>
+            <select class="house__select" name="" id="">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+            </select>
+            <div class="info-data">Enter counter #</div>
+            <button class="btn">Create</button>
+        </div>
 
+        <!--            here goes table for counters-->
+
+        <div class="house-top find">
+            <span class="span-house">Counter history:</span>
+            <select class="house__select" name="" id="">
+                <option value="">select counter 1</option>
+                <option value="">select counter 2</option>
+                <option value="">select counter 3</option>
+            </select>
+            <button class="btn">Show</button>
+        </div>
+        <div class="universal-input-block">
+            <div class="info-data long">Enter ammount</div>
+            <div class="info-data long">Enter date #</div>
+            <button class="btn">Save history</button>
+        </div>
+<!--        here goes table for histories of counters-->
+        <div class="header-top">
+            <span class="block-declaration">Payments block</span>
+            <span>Here you can find payments or add new payment</span>
+        </div>
+        <div class="house-top find">
+            <span class="span-house">Find house:</span>
+            <select class="house__select" name="" id="">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+            </select>
+            <button class="btn">Show</button>
+        </div>
+        <div class="universal-input-block">
+            <div class="info-data long">Enter text about payment</div>
+            <div class="info-data middle">Enter ammount</div>
+            <div class="info-data middle">2022-02-24</div>
+            <button class="btn">Show</button>
+        </div>
+        <div class="payments-history">
+            <span>Payments history</span>
+        </div>
+<!--        here goes table for payments histories with pagination-->
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </div>

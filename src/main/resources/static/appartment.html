@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Immo appartments</title>
+</head>
+<link rel="stylesheet" href="assets/css/main.css">
+<body>
+<div class="container">
+
+
+    <header class="header">
+        <a class="header__link-logo" href="/"><img class="header__logo" src="./assets/img/logo.png" alt=""></a>
+        <nav class="header__navigation">
+            <ul class="header__menu menu">
+                <li class="menu__item"><a class="menu__link" href="">House</a></li>
+                <li class="menu__item"><a class="menu__link menu__link-active" href="">Appartment</a></li>
+                <li class="menu__item"><a class="menu__link" href="">Leaser</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="house">
+        <form action="">
+            <div class="house-top">
+                <div class="header-top">
+                    <span class="block-declaration">Appartment block</span>
+                    <span>Here you can find appartment or create a new one</span>
+                </div>
+                <button class="btn">Create appartment</button>
+            </div>
+            <div class="house-top find">
+                <span class="span-house">Find house:</span>
+                <select class="house__select" name="" id="">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+                <button class="btn">Show</button>
+            </div>
+            <div class="house-top">
+                <span class="span-house">Select appartment</span>
+                <select class="house__select" name="" id="">
+                    <option value="">app 1</option>
+                    <option value="">app 2</option>
+                    <option value="">app 3</option>
+                </select>
+                <button class="btn">Show</button>
+            </div>
+        </form>
+        <div class="appartment-info">
+            <div class="info-block">
+                <span class="notation">ID</span>
+                <div class="info-data short">02</div>
+            </div>
+            <div class="info-block">
+                <span class="notation">Room count</span>
+                <div class="info-data middle">3</div>
+            </div>
+            <div class="info-block">
+                <span class="notation">Square meters</span>
+                <div class="info-data long">53</div>
+            </div>
+            <div class="info-block">
+                <span class="notation">RENT</span>
+                <div class="info-data short">750</div>
+            </div>
+            <div class="info-block">
+                <span class="notation">COSTS</span>
+                <div class="info-data short">200</div>
+            </div>
+            <button class="btn">Save changes</button>
+        </div>
+        <div class="house-top">
+            <span class="span-house">Leaser connected</span>
+            <select class="house__select" name="" id="">
+                <option value="">leaser 1</option>
+                <option value="">leaser 2</option>
+                <option value="">leaser 3</option>
+            </select>
+            <button class="btn">Connect leaser to appartment</button>
+        </div>
+        <div class="header-top">
+            <span class="block-declaration">Appartment comments block</span>
+            <span>Here you can find comments or add new comment to appartment</span>
+        </div>
+        <div class="universal-input-block">
+            <div class="info-data long">Enter short comment</div>
+            <div class="info-data long">Enter date</div>
+            <button class="btn">Save comment</button>
+        </div>
+        <!--        here goes table for appartmen comments-->
+
+        <div class="header-top">
+            <span class="block-declaration">Appartments counter block</span>
+            <span>Here you can find appartment's counter or add a new counter</span>
+        </div>
+
+        <div class="universal-input-block">
+            <div class="info-data">Add counter name</div>
+            <select class="house__select" name="" id="">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+            </select>
+            <div class="info-data">Enter counter #</div>
+            <button class="btn">Save counter</button>
+        </div>
+
+        <!--            here goes table for counters-->
+
+        <div class="house-top find">
+            <span class="span-house">Counter history:</span>
+            <select class="house__select" name="" id="">
+                <option value="">select counter 1</option>
+                <option value="">select counter 2</option>
+                <option value="">select counter 3</option>
+            </select>
+            <button class="btn">To counter</button>
+        </div>
+        <div class="universal-input-block">
+            <div class="info-data long">Enter ammount</div>
+            <select class="house__select" name="" id="">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+            </select>
+            <div class="info-data long">Enter date #</div>
+            <button class="btn">Save history</button>
+        </div>
+
+<!--        here should be counters history with pagination-->
+    </div>
+
+
+</div>
+</body>
+</html>

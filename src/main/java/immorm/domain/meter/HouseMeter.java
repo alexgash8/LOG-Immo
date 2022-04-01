@@ -17,9 +17,7 @@ import javax.persistence.*;
 @EqualsAndHashCode(callSuper = true)
 @DiscriminatorValue(value = "house_meter")
 public class HouseMeter extends Meter {
-
     @ManyToOne
     @JoinColumn(name = "FK_Meter_House")
     House house;
-
 }

@@ -7,6 +7,18 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
+    margin-top: 64px;
+}
+
+.universal-input-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 64px;
+}
+
+.find{
+    width: 830px;
 }
 
 .house__select{
@@ -16,5 +28,18 @@
 .house-info{
     display: flex;
     justify-content: space-between;
+    margin-top: 32px;
+}
+
+.appartment-info{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: bottom;
+}
+
+.leaser-info{
+    display: flex;
+    justify-content: space-between;
+    vertical-align: bottom;
 }
 
