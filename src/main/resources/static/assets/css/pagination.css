@@ -1,0 +1,19 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.pagination ul{
+    display: flex;
+}
+
+.pagination ul li{
+    margin: 0 8px;
+}
+
+.pagination ul li a{
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+}

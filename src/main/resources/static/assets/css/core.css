@@ -16,6 +16,21 @@
     /*top: 663px;*/
 }
 
+svg {
+    width: 24px;
+    height: 24px;
+    fill: #DADADA;
+/*    */
+}
+
+.pagination-active svg{
+    fill: #787A7D;
+}
+
+ul {
+    list-style: none;
+}
+
 .btn{
     border:none;
     border-radius: 16px;
@@ -52,7 +67,13 @@ select{
     border: 1px solid #DADADA;
     padding: 0 24px;
     transition: all .3s;
+    appearance: none;
+    background-image: url("../img/arrow_down.svg");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
 }
+
+
 
 select:hover{
     border-color:var(--hover-select);
@@ -67,13 +88,13 @@ select:hover{
     padding: 0 24px;
 }
 
+
 .info-block{
     display: flex;
     flex-direction: column;
 }
 
 .header-top{
-    margin-top: 64px;
     display: flex;
     flex-direction: column;
 }
@@ -94,7 +115,7 @@ select:hover{
 }
 
 .short{
-    width: 80px;
+    width: 100px;
 }
 
 .middle{
