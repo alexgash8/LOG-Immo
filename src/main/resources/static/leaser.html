@@ -27,7 +27,7 @@
                     <span class="block-declaration">Leaser block</span>
                     <span>Here you can find leaser or create a new one</span>
                 </div>
-                <button class="btn">Create leaser</button>
+                <button type="button" data-modal-button="modal-3" class="btn">Create leaser</button>
             </div>
             <div class="house-top find">
                 <span class="span-house">Select leaser:</span>
@@ -39,45 +39,53 @@
                 <button class="btn">Show</button>
             </div>
         </form>
-        <div class="leaser-info">
+        <div class="appartment-info appartment-info-input">
             <div class="info-block">
                 <span class="notation">ID</span>
-                <div class="info-data short">02</div>
+                <div class="info-data info-data-small">02</div>
             </div>
             <div class="info-block">
                 <span class="notation">Vorname</span>
-                <div class="info-data long">Oleksii</div>
+                <input type="text" class="info-data" placeholder="Oleksii">
+<!--                <div class="info-data long">Oleksii</div>-->
             </div>
             <div class="info-block">
                 <span class="notation">Nachname</span>
-                <div class="info-data long">Hashynskyi</div>
+                <input type="text" class="info-data" placeholder="Hashynskyi">
+<!--                <div class="info-data long">Hashynskyi</div>-->
             </div>
             <div class="info-block">
                 <span class="notation">LeuteZahl</span>
-                <div class="info-data short">5</div>
+                <input type="number" class="info-data info-data-small" placeholder="5">
+<!--                <div class="info-data short">5</div>-->
             </div>
             <div class="info-block">
                 <span class="notation">Einreise</span>
-                <div class="info-data middle">22-04-2022</div>
+                <input type="date" class="info-data" placeholder="22-04-2022">
+<!--                <div class="info-data middle">22-04-2022</div>-->
             </div>
             <button class="btn">Save changes</button>
         </div>
-        <div class="leaser-info">
+        <div class="appartment-info appartment-info-long">
             <div class="info-block">
                 <span class="notation">Email</span>
-                <div class="info-data long">alexgash8@gmail.com</div>
+                <input type="email" class="info-data" placeholder="alexgash8@gmail.com">
+<!--                <div class="info-data long">alexgash8@gmail.com</div>-->
             </div>
             <div class="info-block">
                 <span class="notation">Handy nummer</span>
-                <div class="info-data long">015-901-303-053</div>
+                <input type="tel" class="info-data info-data-medium" placeholder="015-901-303-053">
+<!--                <div class="info-data long">015-901-303-053</div>-->
             </div>
             <div class="info-block">
                 <span class="notation">Haus nummer</span>
-                <div class="info-data long">040-50-60-79</div>
+                <input type="tel" class="info-data info-data-medium" placeholder="040-50-60-79">
+<!--                <div class="info-data long">040-50-60-79</div>-->
             </div>
             <div class="info-block">
                 <span class="notation">Ausziehen</span>
-                <div class="info-data middle">22-08-2022</div>
+                <input type="date" class="info-data" placeholder="22-08-2022">
+<!--                <div class="info-data middle">22-08-2022</div>-->
             </div>
             <button class="btn">Save changes</button>
         </div>
@@ -100,10 +108,10 @@
             <button class="btn">Connect appartment to leaser</button>
         </div>
         <span class="span-house">Last adress</span>
-        <div class="house-info">
+        <div class="appartment-info appartment-info-long appartment-info-input">
             <div class="info-block">
                 <span class="notation">ID</span>
-                <div class="info-data short">02</div>
+                <div class="info-data info-data-small">02</div>
             </div>
             <div class="info-block">
                 <span class="notation">City</span>
@@ -111,11 +119,11 @@
             </div>
             <div class="info-block">
                 <span class="notation">Street</span>
-                <div class="info-data long">Holsteiner Chaussee</div>
+                <div class="info-data">Holsteiner Chaussee</div>
             </div>
             <div class="info-block">
                 <span class="notation">Number</span>
-                <div class="info-data short">171</div>
+                <div class="info-data info-data-small">171</div>
             </div>
             <div class="info-block">
                 <span class="notation">PLZ</span>
@@ -129,10 +137,10 @@
         </div>
 
         <span class="span-house">Next address</span>
-        <div class="house-info">
+        <div class="appartment-info appartment-info-long appartment-info-input">
             <div class="info-block">
                 <span class="notation">ID</span>
-                <div class="info-data short">02</div>
+                <div class="info-data info-data-small">02</div>
             </div>
             <div class="info-block">
                 <span class="notation">City</span>
@@ -140,7 +148,7 @@
             </div>
             <div class="info-block">
                 <span class="notation">Street</span>
-                <div class="info-data long">Holsteiner Chaussee</div>
+                <div class="info-data">Holsteiner Chaussee</div>
             </div>
             <div class="info-block">
                 <span class="notation">Number</span>
@@ -157,20 +165,23 @@
             <button class="btn">Save changes</button>
         </div>
 
-        <div class="header-top">
+        <div class="header-top header-top-last-info-block">
             <span class="span-house">Bank account</span>
-            <div class="house-info">
+            <div class="appartment-info">
                 <div class="info-block">
                     <span class="notation">Bank name</span>
-                    <div class="info-data long">Post Bank</div>
+                    <input type="text" class="info-data" placeholder="Post Bank">
+<!--                    <div class="info-data long">Post Bank</div>-->
                 </div>
                 <div class="info-block">
                     <span class="notation">IBAN</span>
-                    <div class="info-data long">135164147474513436</div>
+                    <input type="text" class="info-data" placeholder="135164147474513436">
+<!--                    <div class="info-data long">135164147474513436</div>-->
                 </div>
                 <div class="info-block">
                     <span class="notation">BIC</span>
-                    <div class="info-data long"> </div>
+                    <input type="text" class="info-data" placeholder="DE 3t234y24 43543614">
+<!--                    <div class="info-data long"> </div>-->
                 </div>
                 <button class="btn">Save changes</button>
             </div>
@@ -182,15 +193,90 @@
             <span>Here you can see leaser's payments or add a new one</span>
         </div>
         <div class="universal-input-block">
-            <div class="info-data long">Enter short text about payment</div>
-            <div class="info-data long">Enter ammount</div>
-            <div class="info-data long">Enter date</div>
+            <input type="text" class="info-data" placeholder="Enter short text about payment">
+            <input type="text" class="info-data" placeholder="Enter ammount">
+            <input type="text" class="info-data" placeholder="Enter date">
             <button class="btn">Save comment</button>
         </div>
-        <!--        here goes table for appartment comments-->
+        <div class="house-table">
+            <div class="counter-house-table-inner counter-house-table-inner__header">
+                <div class="house-table-block house-table-block__13">id</div>
+                <div class="house-table-block house-table-block__29">Payment text field</div>
+                <div class="house-table-block house-table-block__29">Ammount</div>
+                <div class="house-table-block house-table-block__right house-table-block__13">date</div>
+            </div>
+            <div class="house-counter">
+                <div class="counter-house-table-inner counter-house-table-inner__content">
+                    <div class="house-table-block house-table-block__left house-table-block__13">1</div>
+                    <div class="house-table-block house-table-block__left house-table-block__29">Payment for water Spring 2022</div>
+                    <div class="house-table-block house-table-block__left house-table-block__29">170,88</div>
+                    <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+                </div>
+                <div class="counter-house-table-inner counter-house-table-inner__content">
+                    <div class="house-table-block house-table-block__left house-table-block__13">1111</div>
+                    <div class="house-table-block house-table-block__left house-table-block__29">aaaaa</div>
+                    <div class="house-table-block house-table-block__left house-table-block__29">ggggg</div>
+                    <div class="house-table-block house-table-block__right house-table-block__13">88888</div>
+                </div>
+                <div class="counter-house-table-inner counter-house-table-inner__content">
+                    <div class="house-table-block house-table-block__left house-table-block__13">1111</div>
+                    <div class="house-table-block house-table-block__left house-table-block__29">aaaaa</div>
+                    <div class="house-table-block house-table-block__left house-table-block__29">ggggg</div>
+                    <div class="house-table-block house-table-block__right house-table-block__13">88888</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="pagination">
+                            <span>  <svg viewBox="0 0 25 24">
+                                    <path d="M15.91 7.41L11.33 12L15.91 16.59L14.5 18L8.49997 12L14.5 6L15.91 7.41Z"/>
+                                    </svg>
+
+
+                            </span>
+            <ul>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+            </ul>
+            <span class="pagination-active">  <svg viewBox="0 0 25 24">
+                                <path d="M9.09003 16.59L13.67 12L9.09003 7.41L10.5 6L16.5 12L10.5 18L9.09003 16.59Z"/>
+                                </svg>
+                        </span>
+        </div>
     </div>
 
 
 </div>
+<div id="modal-3" data-modal class="fade-block hidden">
+    <div class="modal-window">
+        <div class="create create-house">
+            <svg data-modal-close class="cls-btn" width="32" height="32" viewBox="0 0 32 32" fill="none" id="close">
+                <path d="M25.3334 8.54675L23.4534 6.66675L16 14.1201L8.54669 6.66675L6.66669 8.54675L14.12 16.0001L6.66669 23.4534L8.54669 25.3334L16 17.8801L23.4534 25.3334L25.3334 23.4534L17.88 16.0001L25.3334 8.54675Z" fill="black"/>
+            </svg>
+            <div class="create-info-block">
+                <span class="notation">Vorname</span>
+                <input type="text" class="input-data-modal" placeholder="Oleksii">
+            </div>
+            <div class="create-info-block">
+                <span class="notation">Nachname</span>
+                <input type="text" class="input-data-modal" placeholder="Hashynskiy">
+            </div>
+            <div class="create-info-block">
+                <span class="notation">Leute zahl</span>
+                <input type="number" class="input-data-modal" placeholder="7">
+            </div>
+            <div class="create-info-block">
+                <span class="notation">Einraise datum</span>
+                <input type="date" class="input-data-modal" placeholder="750">
+            </div>
+            <button class="btn-modal">Create Appartment</button>
+        </div>
+    </div>
+</div>
+<script src="assets/js/main.js">
+</script>
 </body>
 </html>

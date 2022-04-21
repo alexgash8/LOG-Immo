@@ -10,6 +10,8 @@
     margin-top: 64px;
 }
 
+
+
 .house-inner {
     margin-bottom: 64px;
 }
@@ -30,6 +32,10 @@
     margin-top: 64px;
     box-shadow: 2px 3px 25px rgba(60, 51, 51, 0.1);
     border-radius: 16px;
+}
+
+.house-table-small {
+    width: 60%;
 }
 
 .counter-house-table-inner {
@@ -90,7 +96,7 @@
 
 
 .find{
-    width: 830px;
+    width: 900px;
 }
 
 .house__select{
@@ -106,7 +112,20 @@
 .appartment-info{
     display: flex;
     justify-content: space-between;
-    vertical-align: bottom;
+    align-items: flex-end;
+    width: 100%;
+    /*margin-bottom: 40px;*/
+    /*margin-top: 64px;*/
+    /*vertical-align: bottom;*/
+}
+
+.appartment-info-input {
+    margin-right: 30px;
+    margin-bottom: 32px;
+}
+
+.appartment-info-long {
+    column-gap: 16px;
 }
 
 .leaser-info{

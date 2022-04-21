@@ -42,6 +42,7 @@ ul {
     color: var(--white-color-text);
     font-weight: 600;
     transition: all .3s;
+    flex-shrink: 0;
 }
 
 .btn:hover{
@@ -88,15 +89,34 @@ select:hover{
     padding: 0 24px;
 }
 
+.info-data-medium {
+    width: 242px;
+}
+
+.info-data-small{
+    width: 80px;
+}
+
+.info-data-plus{
+    width: 120px;
+}
 
 .info-block{
     display: flex;
     flex-direction: column;
 }
 
+.info-block-small {
+    width: 80px;
+}
+
 .header-top{
     display: flex;
     flex-direction: column;
+}
+
+.header-top-last-info-block {
+    margin-bottom: 32px;
 }
 
 .notation{
