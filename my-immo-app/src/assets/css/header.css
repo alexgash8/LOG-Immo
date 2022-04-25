@@ -1,0 +1,37 @@
+.header{
+    display: flex;
+    align-items: center;
+}
+.header__logo{
+    width: 78px;
+    height: 78px;
+}
+
+.header__menu{
+    display: flex;
+}
+
+.header__navigation{
+    flex: 2;
+}
+
+.header__link-logo{
+    flex: 1;
+}
+
+.menu__item + .menu__item{
+    margin-left: 44px;
+}
+
+.menu__link{
+    color: var(--black-color-text);
+    transition: all .3s;
+}
+
+.menu__link:hover{
+    font-weight: 600;
+}
+
+.menu__link-active{
+    font-weight: 600;
+}

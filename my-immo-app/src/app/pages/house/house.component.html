@@ -1,0 +1,299 @@
+<div class="container">
+  <header class="header">
+    <a class="header__link-logo" href="/"><img class="header__logo" src="./assets/img/logo.png" alt=""></a>
+    <nav class="header__navigation">
+      <ul class="header__menu menu">
+        <li class="menu__item"><a class="menu__link menu__link-active" href="">House</a></li>
+        <li class="menu__item"><a class="menu__link" href="">Appartment</a></li>
+        <li class="menu__item"><a class="menu__link" href="">Leaser</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="house">
+    <div class="house-inner">
+      <div class="house-top">
+        <div class="header-top">
+          <span class="block-declaration">House block</span>
+          <span>Here you can find house to create a new one</span>
+        </div>
+        <button type="button" (click)="openPopUp()" class="btn">Create House</button>
+      </div>
+      <div class="house-top find">
+        <span class="span-house">Find house:</span>
+        <select [(ngModel)]="selectedHouse" (change)="onChange($event.target)" class="house__select" name="" id="">
+
+          <option *ngFor="let house of houses; let i = index" [value]="i">{{house.address.street}}
+            , {{house.address.houseNumber}}</option>
+        </select>
+        <!--          <button class="btn">Show</button>-->
+      </div>
+      <div *ngIf="houses.length != 0" class="house-info">
+        <div class="info-block">
+          <span class="notation">ID</span>
+          <div class="info-data short">{{houses[selectedHouse].id}}</div>
+        </div>
+        <div class="info-block">
+          <span class="notation">City</span>
+          <div class="info-data middle">{{houses[selectedHouse].address.city}}</div>
+        </div>
+        <div class="info-block">
+          <span class="notation">Street</span>
+          <div class="info-data long">{{houses[selectedHouse].address.street}}</div>
+        </div>
+        <div class="info-block">
+          <span class="notation">Number</span>
+          <div class="info-data short">{{houses[selectedHouse].address.houseNumber}}</div>
+        </div>
+        <div class="info-block">
+          <span class="notation">PLZ</span>
+          <div class="info-data short">{{houses[selectedHouse].address.postalCode}}</div>
+        </div>
+        <div class="info-block">
+          <span class="notation">Insurance number</span>
+          <div class="info-data long">{{houses[selectedHouse].insuranceNumber}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="houses.length != 0">
+      <div class="house-inner">
+        <div class="header-top">
+          <span class="block-declaration">Counter block</span>
+          <span>Here you can find counter to add a new counter to a house</span>
+        </div>
+        <!--                <div class="house-top find">-->
+        <!--                    <span class="span-house ">Find house:</span>-->
+        <!--                    <select class="house__select" name="" id="">-->
+        <!--                        <option value="">1</option>-->
+        <!--                        <option value="">2</option>-->
+        <!--                        <option value="">3</option>-->
+        <!--                    </select>-->
+        <!--                    <button class="btn">Show</button>-->
+        <!--                </div>-->
+        <div class="universal-input-block">
+          <input [(ngModel)]="newCounter.name" type="text" class="info-data" placeholder="Enter counter name">
+          <select [(ngModel)]="newCounter.type" class="house__select" name="" id="">
+            <option value="">gas</option>
+            <option value="">water</option>
+            <option value="">electro</option>
+          </select>
+          <input [(ngModel)]="newCounter.number" type="number" class="info-data" placeholder="Enter counter #">
+          <button (click)="createCounter()" class="btn">Create</button>
+        </div>
+        <div class="house-table">
+          <div class="counter-house-table-inner counter-house-table-inner__header">
+            <div class="house-table-block house-table-block__29">Counter id</div>
+            <div class="house-table-block house-table-block__29">Counter name</div>
+            <div class="house-table-block house-table-block__29">Counter type</div>
+            <div class="house-table-block house-table-block__right house-table-block__13">Counter number
+            </div>
+          </div>
+          <div class="house-counter">
+            <div *ngFor="let meter of meters" class="counter-house-table-inner counter-house-table-inner__content">
+              <div class="house-table-block house-table-block__left house-table-block__29">{{meter.id}}</div>
+              <div class="house-table-block house-table-block__left house-table-block__29">{{meter.name}}</div>
+              <div class="house-table-block house-table-block__left house-table-block__29">{{meter.type}}</div>
+              <div class="house-table-block house-table-block__right house-table-block__13">{{meter.number}}</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="pagination">
+                            <span>  <svg viewBox="0 0 25 24">
+                                    <path d="M15.91 7.41L11.33 12L15.91 16.59L14.5 18L8.49997 12L14.5 6L15.91 7.41Z"/>
+                                    </svg>
+
+
+                            </span>
+          <ul>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+          </ul>
+          <span class="pagination-active">  <svg viewBox="0 0 25 24">
+                                <path d="M9.09003 16.59L13.67 12L9.09003 7.41L10.5 6L16.5 12L10.5 18L9.09003 16.59Z"/>
+                                </svg>
+                        </span>
+        </div>
+
+        <div class="house-top find">
+          <span class="span-house">Counter history:</span>
+          <select class="house__select" name="" id="">
+            <option value="">select counter 1</option>
+            <option value="">select counter 2</option>
+            <option value="">select counter 3</option>
+          </select>
+          <button class="btn">Add</button>
+        </div>
+        <div class="universal-input-block">
+          <input type="text" class="info-data" placeholder="Enter ammount">
+          <input type="text" class="info-data" placeholder="Enter date #">
+          <button class="btn">Save history</button>
+        </div>
+      </div>
+      <div class="house-table">
+        <div class="counter-house-table-inner counter-house-table-inner__header">
+          <div class="house-table-block house-table-block__29">Counter id</div>
+          <div class="house-table-block house-table-block__29">Ammount</div>
+          <div class="house-table-block house-table-block__right house-table-block__13">date</div>
+        </div>
+        <div class="house-counter">
+          <div class="counter-house-table-inner counter-house-table-inner__content">
+            <div class="house-table-block house-table-block__left house-table-block__29">1</div>
+            <div class="house-table-block house-table-block__left house-table-block__29">170,88</div>
+            <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+          </div>
+          <div class="counter-house-table-inner counter-house-table-inner__content">
+            <div class="house-table-block house-table-block__left house-table-block__29">1</div>
+            <div class="house-table-block house-table-block__left house-table-block__29">170,88</div>
+            <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+          </div>
+          <div class="counter-house-table-inner counter-house-table-inner__content">
+            <div class="house-table-block house-table-block__left house-table-block__29">1</div>
+            <div class="house-table-block house-table-block__left house-table-block__29">170,88</div>
+            <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="pagination">
+                            <span>  <svg viewBox="0 0 25 24">
+                                    <path d="M15.91 7.41L11.33 12L15.91 16.59L14.5 18L8.49997 12L14.5 6L15.91 7.41Z"/>
+                                    </svg>
+
+
+                            </span>
+        <ul>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+        </ul>
+        <span class="pagination-active">  <svg viewBox="0 0 25 24">
+                                <path d="M9.09003 16.59L13.67 12L9.09003 7.41L10.5 6L16.5 12L10.5 18L9.09003 16.59Z"/>
+                                </svg>
+                        </span>
+      </div>
+
+      <div class="header-top">
+        <span class="block-declaration">Payments block</span>
+        <span>Here you can find payments or add new payment</span>
+      </div>
+      <!--            <div class="house-top find">-->
+      <!--                <span class="span-house">Find house:</span>-->
+      <!--                <select class="house__select" name="" id="">-->
+      <!--                    <option value="">1</option>-->
+      <!--                    <option value="">2</option>-->
+      <!--                    <option value="">3</option>-->
+      <!--                </select>-->
+      <!--                <button class="btn">Show</button>-->
+      <!--            </div>-->
+      <div class="universal-input-block">
+        <input type="text" class="info-data" placeholder="Enter text about payment">
+        <input type="text" class="info-data" placeholder="Enter ammount">
+        <input type="text" class="info-data" placeholder="2022-02-24">
+        <button class="btn">Show</button>
+      </div>
+      <div class="payments-history">
+        <span>Payments history</span>
+      </div>
+      <div class="house-table">
+        <div class="counter-house-table-inner counter-house-table-inner__header">
+          <div class="house-table-block house-table-block__29">id</div>
+          <div class="house-table-block house-table-block__29">Payment text field</div>
+          <div class="house-table-block house-table-block__29">Ammount</div>
+          <div class="house-table-block house-table-block__right house-table-block__13">date</div>
+        </div>
+        <div class="house-counter">
+          <div class="counter-house-table-inner counter-house-table-inner__content">
+            <div class="house-table-block house-table-block__left house-table-block__29">1</div>
+            <div class="house-table-block house-table-block__left house-table-block__29">Payment for water Spring 2022
+            </div>
+            <div class="house-table-block house-table-block__left house-table-block__29">170,88</div>
+            <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+          </div>
+          <div class="counter-house-table-inner counter-house-table-inner__content">
+            <div class="house-table-block house-table-block__left house-table-block__29">1111</div>
+            <div class="house-table-block house-table-block__left house-table-block__29">aaaaa</div>
+            <div class="house-table-block house-table-block__left house-table-block__29">ggggg</div>
+            <div class="house-table-block house-table-block__right house-table-block__13">88888</div>
+          </div>
+          <div class="counter-house-table-inner counter-house-table-inner__content">
+            <div class="house-table-block house-table-block__left house-table-block__29">1111</div>
+            <div class="house-table-block house-table-block__left house-table-block__29">aaaaa</div>
+            <div class="house-table-block house-table-block__left house-table-block__29">ggggg</div>
+            <div class="house-table-block house-table-block__right house-table-block__13">88888</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="pagination">
+                            <span>  <svg viewBox="0 0 25 24">
+                                    <path d="M15.91 7.41L11.33 12L15.91 16.59L14.5 18L8.49997 12L14.5 6L15.91 7.41Z"/>
+                                    </svg>
+
+
+                            </span>
+        <ul>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+        </ul>
+        <span class="pagination-active">  <svg viewBox="0 0 25 24">
+                                <path d="M9.09003 16.59L13.67 12L9.09003 7.41L10.5 6L16.5 12L10.5 18L9.09003 16.59Z"/>
+                                </svg>
+                        </span>
+      </div>
+      <!--        here goes table for payments histories with pagination-->
+    </div>
+  </div>
+</div>
+
+<div class="fade-block" [class]="(showPopUp)?'':'hidden'">
+  <div class="modal-window">
+    <div class="create create-house">
+
+      <svg (click)="closePopUp()" class="cls-btn" data-modal-close width="32" height="32" viewBox="0 0 32 32"
+           fill="none" id="close">
+        <path
+          d="M25.3334 8.54675L23.4534 6.66675L16 14.1201L8.54669 6.66675L6.66669 8.54675L14.12 16.0001L6.66669 23.4534L8.54669 25.3334L16 17.8801L23.4534 25.3334L25.3334 23.4534L17.88 16.0001L25.3334 8.54675Z"
+          fill="black"/>
+      </svg>
+
+      <div class="create-info-block">
+        <span class="notation">Number appartments</span>
+        <input [(ngModel)]="newHouse.appNumb" type="number" class="input-data-modal" placeholder="17">
+      </div>
+
+      <div class="create-info-block">
+        <span class="notation">City</span>
+        <input [(ngModel)]="newHouse.city" type="text" class="input-data-modal" placeholder="Hamburg">
+      </div>
+      <div class="create-info-block">
+        <span class="notation">Street</span>
+        <input [(ngModel)]="newHouse.street" type="text" class="input-data-modal" placeholder="Holsteiner Chaussee">
+      </div>
+      <div class="create-info-block">
+        <span class="notation">Number</span>
+        <input [(ngModel)]="newHouse.number" type="text" class="input-data-modal" placeholder="171">
+      </div>
+      <div class="create-info-block">
+        <span class="notation">PLZ</span>
+        <input [(ngModel)]="newHouse.plz" type="text" class="input-data-modal" placeholder="22457">
+      </div>
+      <div class="create-info-block">
+        <span class="notation">Insurance number</span>
+        <input [(ngModel)]="newHouse.insurance" type="text" class="input-data-modal" placeholder="750">
+      </div>
+
+      <button (click)="createHouse()" class="btn-modal">Create House</button>
+    </div>
+  </div>
+</div>

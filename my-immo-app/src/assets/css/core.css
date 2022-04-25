@@ -1,0 +1,148 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.leaser-connected{
+}
+
+svg {
+    width: 24px;
+    height: 24px;
+    fill: #DADADA;
+/*    */
+}
+
+.pagination-active svg{
+    fill: #787A7D;
+}
+
+ul {
+    list-style: none;
+}
+
+.btn{
+    border:none;
+    border-radius: 16px;
+    height: 62px;
+    background-color: var(--button-color);
+    padding: 0 24px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--white-color-text);
+    font-weight: 600;
+    transition: all .3s;
+    flex-shrink: 0;
+}
+
+.btn:hover{
+    background-color: var(--hover-button);
+}
+
+
+.btn-disabled{
+    cursor: default;
+    background-color: var(--button-color-disabled);
+}
+
+.span-house{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--black-color-text);
+}
+
+select{
+    height: 62px;
+    border-radius: 16px;
+    border: 1px solid #DADADA;
+    padding: 0 24px;
+    transition: all .3s;
+    appearance: none;
+    background-image: url("../img/arrow_down.svg");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+}
+
+
+
+select:hover{
+    border-color:var(--hover-select);
+}
+
+.info-data{
+    display: inline-flex;
+    align-items: center;
+    height: 62px;
+    border-radius: 16px;
+    border: 1px solid #DADADA;
+    padding: 0 24px;
+}
+
+.info-data-medium {
+    width: 242px;
+}
+
+.info-data-small{
+    width: 80px;
+}
+
+.info-data-plus{
+    width: 120px;
+}
+
+.info-block{
+    display: flex;
+    flex-direction: column;
+}
+
+.info-block-small {
+    width: 80px;
+}
+
+.header-top{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-top-last-info-block {
+    margin-bottom: 32px;
+}
+
+.notation{
+    font-size: 16px;
+    color: var(--label);
+}
+
+.block-declaration{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.block-undertext{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.short{
+    width: 100px;
+}
+
+.middle{
+    width: 180px;
+}
+
+.long{
+    width: 280px;
+}
+
+.payments-history{
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 64px;
+}
+
+
+
+
+

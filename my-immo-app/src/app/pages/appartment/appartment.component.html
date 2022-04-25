@@ -1,0 +1,302 @@
+<div class="container">
+  <header class="header">
+    <a class="header__link-logo" href="/"><img class="header__logo" src="./assets/img/logo.png" alt=""></a>
+    <nav class="header__navigation">
+      <ul class="header__menu menu">
+        <li class="menu__item"><a class="menu__link" href="">House</a></li>
+        <li class="menu__item"><a class="menu__link menu__link-active" href="">Appartment</a></li>
+        <li class="menu__item"><a class="menu__link" href="">Leaser</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="house">
+    <form action="">
+      <div class="house-top">
+        <div class="header-top">
+          <span class="block-declaration">Appartment block</span>
+          <span>Here you can find appartment or create a new one</span>
+        </div>
+        <button type="button" (click)="openPopUp()" class="btn">Create appartment</button>
+      </div>
+      <div class="house-top find">
+        <span class="span-house">Find house:</span>
+        <select class="house__select" name="" id="">
+          <option value="">1</option>
+          <option value="">2</option>
+          <option value="">3</option>
+        </select>
+        <button class="btn">Show</button>
+      </div>
+      <div class="house-top">
+        <span class="span-house">Select appartment</span>
+        <select class="house__select" name="" id="">
+          <option value="">app 1</option>
+          <option value="">app 2</option>
+          <option value="">app 3</option>
+        </select>
+        <button class="btn">Show</button>
+      </div>
+    </form>
+    <div class="appartment-info">
+      <div class="info-block">
+        <span class="notation">ID</span>
+        <div class="info-data short">02</div>
+      </div>
+      <div class="info-block">
+        <span class="notation">Room count</span>
+        <div class="info-data middle">3</div>
+      </div>
+      <div class="info-block">
+        <span class="notation">Square meters</span>
+        <div class="info-data long">53</div>
+      </div>
+      <div class="info-block">
+        <span class="notation">RENT</span>
+        <input type="number" class="info-data info-data-smaller" placeholder="750">
+      </div>
+      <div class="info-block">
+        <span class="notation">COSTS</span>
+        <input type="number" class="info-data info-data-plus" placeholder="250">
+      </div>
+      <button class="btn">Save changes</button>
+    </div>
+    <div class="house-top">
+      <span class="span-house">Leaser connected</span>
+      <select class="house__select" name="" id="">
+        <option value="">leaser 1</option>
+        <option value="">leaser 2</option>
+        <option value="">leaser 3</option>
+      </select>
+      <button class="btn">Connect leaser to appartment</button>
+    </div>
+    <div class="header-top">
+      <span class="block-declaration">Appartment comments block</span>
+      <span>Here you can find comments or add new comment to appartment</span>
+    </div>
+    <div class="universal-input-block">
+      <input type="text" class="info-data" placeholder="Enter short comment">
+      <input type="text" class="info-data" placeholder="Enter date">
+      <button class="btn">Save comment</button>
+    </div>
+    <!--        here goes table for appartmen comments-->
+    <div class="house-table house-table-small">
+      <div class="counter-house-table-inner counter-house-table-inner__header">
+        <div class="house-table-block house-table-block__29">id</div>
+        <div class="house-table-block house-table-block__29">Comment</div>
+        <div class="house-table-block house-table-block__right house-table-block__13">date</div>
+      </div>
+      <div class="house-counter">
+        <div class="counter-house-table-inner counter-house-table-inner__content">
+          <div class="house-table-block house-table-block__left house-table-block__29">1</div>
+          <div class="house-table-block house-table-block__left house-table-block__29">bla bla bla</div>
+          <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+        </div>
+        <div class="counter-house-table-inner counter-house-table-inner__content">
+          <div class="house-table-block house-table-block__left house-table-block__29">2</div>
+          <div class="house-table-block house-table-block__left house-table-block__29">bla bla bla</div>
+          <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+        </div>
+        <div class="counter-house-table-inner counter-house-table-inner__content">
+          <div class="house-table-block house-table-block__left house-table-block__29">3</div>
+          <div class="house-table-block house-table-block__left house-table-block__29">bla bla bla</div>
+          <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="pagination pagination-small">
+                            <span>  <svg viewBox="0 0 25 24">
+                                    <path d="M15.91 7.41L11.33 12L15.91 16.59L14.5 18L8.49997 12L14.5 6L15.91 7.41Z"/>
+                                    </svg>
+
+
+                            </span>
+      <ul>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+      </ul>
+      <span class="pagination-active">  <svg viewBox="0 0 25 24">
+                                <path d="M9.09003 16.59L13.67 12L9.09003 7.41L10.5 6L16.5 12L10.5 18L9.09003 16.59Z"/>
+                                </svg>
+                        </span>
+    </div>
+
+    <div class="header-top">
+      <span class="block-declaration">Appartments counter block</span>
+      <span>Here you can find appartment's counter or add a new counter</span>
+    </div>
+
+    <div class="universal-input-block">
+      <input type="text" class="info-data" placeholder="Add counter name">
+      <select class="house__select" name="" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+      </select>
+      <input type="text" class="info-data" placeholder="Enter counter #">
+      <button class="btn">Save counter</button>
+    </div>
+
+    <div class="house-table">
+      <div class="counter-house-table-inner counter-house-table-inner__header">
+        <div class="house-table-block house-table-block__29">Counter id</div>
+        <div class="house-table-block house-table-block__29">Counter name</div>
+        <div class="house-table-block house-table-block__29">Counter type</div>
+        <div class="house-table-block house-table-block__right house-table-block__13">Counter number
+        </div>
+      </div>
+      <div class="house-counter">
+        <div class="counter-house-table-inner counter-house-table-inner__content">
+          <div class="house-table-block house-table-block__left house-table-block__29">1111</div>
+          <div class="house-table-block house-table-block__left house-table-block__29">aaaaa</div>
+          <div class="house-table-block house-table-block__left house-table-block__29">ggggg</div>
+          <div class="house-table-block house-table-block__right house-table-block__13">88888</div>
+        </div>
+        <div class="counter-house-table-inner counter-house-table-inner__content">
+          <div class="house-table-block house-table-block__left house-table-block__29">1111</div>
+          <div class="house-table-block house-table-block__left house-table-block__29">aaaaa</div>
+          <div class="house-table-block house-table-block__left house-table-block__29">ggggg</div>
+          <div class="house-table-block house-table-block__right house-table-block__13">88888</div>
+        </div>
+        <div class="counter-house-table-inner counter-house-table-inner__content">
+          <div class="house-table-block house-table-block__left house-table-block__29">1111</div>
+          <div class="house-table-block house-table-block__left house-table-block__29">aaaaa</div>
+          <div class="house-table-block house-table-block__left house-table-block__29">ggggg</div>
+          <div class="house-table-block house-table-block__right house-table-block__13">88888</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="pagination">
+                            <span>  <svg viewBox="0 0 25 24">
+                                    <path d="M15.91 7.41L11.33 12L15.91 16.59L14.5 18L8.49997 12L14.5 6L15.91 7.41Z"/>
+                                    </svg>
+
+
+                            </span>
+      <ul>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+      </ul>
+      <span class="pagination-active">  <svg viewBox="0 0 25 24">
+                                <path d="M9.09003 16.59L13.67 12L9.09003 7.41L10.5 6L16.5 12L10.5 18L9.09003 16.59Z"/>
+                                </svg>
+                        </span>
+    </div>
+
+    <div class="house-top find">
+      <span class="span-house">Counter history:</span>
+      <select class="house__select" name="" id="">
+        <option value="">select counter 1</option>
+        <option value="">select counter 2</option>
+        <option value="">select counter 3</option>
+      </select>
+      <button class="btn">To counter</button>
+    </div>
+    <div class="universal-input-block">
+      <input type="text" class="info-data" placeholder="Enter ammount">
+      <select class="house__select" name="" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+      </select>
+      <input type="text" class="info-data" placeholder="Enter date #">
+      <button class="btn">Save history</button>
+    </div>
+    <div class="house-table">
+      <div class="counter-house-table-inner counter-house-table-inner__header">
+        <div class="house-table-block house-table-block__29">Counter id</div>
+        <div class="house-table-block house-table-block__29">Ammount</div>
+        <div class="house-table-block house-table-block__right house-table-block__13">date</div>
+      </div>
+      <div class="house-counter">
+        <div class="counter-house-table-inner counter-house-table-inner__content">
+          <div class="house-table-block house-table-block__left house-table-block__29">1</div>
+          <div class="house-table-block house-table-block__left house-table-block__29">bla bla bla</div>
+          <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+        </div>
+        <div class="counter-house-table-inner counter-house-table-inner__content">
+          <div class="house-table-block house-table-block__left house-table-block__29">2</div>
+          <div class="house-table-block house-table-block__left house-table-block__29">bla bla bla</div>
+          <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+        </div>
+        <div class="counter-house-table-inner counter-house-table-inner__content">
+          <div class="house-table-block house-table-block__left house-table-block__29">3</div>
+          <div class="house-table-block house-table-block__left house-table-block__29">bla bla bla</div>
+          <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="pagination">
+                            <span>  <svg viewBox="0 0 25 24">
+                                    <path d="M15.91 7.41L11.33 12L15.91 16.59L14.5 18L8.49997 12L14.5 6L15.91 7.41Z"/>
+                                    </svg>
+
+
+                            </span>
+      <ul>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+      </ul>
+      <span class="pagination-active">  <svg viewBox="0 0 25 24">
+                                <path d="M9.09003 16.59L13.67 12L9.09003 7.41L10.5 6L16.5 12L10.5 18L9.09003 16.59Z"/>
+                                </svg>
+                        </span>
+    </div>
+    <!--        here should be counters history with pagination-->
+  </div>
+</div>
+
+<div class="fade-block" [class]="(showPopUp)?'':'hidden'">
+  <div class="modal-window">
+    <div class="create create-house">
+
+      <svg (click)="closePopUp()" class="cls-btn" width="32" height="32" viewBox="0 0 32 32" fill="none" id="close">
+        <path d="M25.3334 8.54675L23.4534 6.66675L16 14.1201L8.54669 6.66675L6.66669 8.54675L14.12 16.0001L6.66669 23.4534L8.54669 25.3334L16 17.8801L23.4534 25.3334L25.3334 23.4534L17.88 16.0001L25.3334 8.54675Z" fill="black"/>
+      </svg>
+
+      <div class="create-info-block">
+        <select class="modal-house__select" name="" id="">
+          <option value="">House #1 Merkenstrasse</option>
+          <option value="">House #2 Holsteiner Chaussee</option>
+        </select>
+      </div>
+
+      <div class="create-info-block">
+        <span class="notation">Appartment ID</span>
+        <input [(ngModel)]="newAppartment.appId" type="text" class="input-data-modal" placeholder="1.01">
+      </div>
+      <div class="create-info-block">
+        <span class="notation">Rooms</span>
+        <input [(ngModel)]="newAppartment.rooms" type="number" class="input-data-modal" placeholder="3">
+      </div>
+      <div class="create-info-block">
+        <span class="notation">M2</span>
+        <input [(ngModel)]="newAppartment.m2" type="number" class="input-data-modal" placeholder="87,5">
+      </div>
+      <div class="create-info-block">
+        <span class="notation">RENT</span>
+        <input [(ngModel)]="newAppartment.rent" type="number" class="input-data-modal" placeholder="750">
+      </div>
+      <div class="create-info-block">
+        <span class="notation">Costs</span>
+        <input [(ngModel)]="newAppartment.costs" type="number" class="input-data-modal" placeholder="250">
+      </div>
+
+      <button (click)="createAppartment()" class="btn-modal">Create Appartment</button>
+    </div>
+  </div>
+</div>

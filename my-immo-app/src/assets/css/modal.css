@@ -1,0 +1,71 @@
+.create {
+    background-color: white;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.fade-block {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+    background-color: #E5E5E5;
+}
+
+.modal-window {
+    max-width: 588px;
+    margin: auto;
+}
+
+.cls-btn{
+    margin-left: 280px;
+}
+
+.hidden {
+    display: none;
+}
+
+.create-info-block{
+    /*display: flex;*/
+    /*margin: 16px;*/
+    /*gap: 32px;*/
+    /*flex-direction: column;*/
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+}
+
+.input-data-modal{
+    display: inline-flex;
+    align-items: center;
+    height: 62px;
+    border-radius: 16px;
+    border: 1px solid #DADADA;
+    padding: 0 24px;
+}
+
+.btn-modal {
+    margin-left: 96px;
+    margin-top: 16px;
+    border:none;
+    border-radius: 16px;
+    height: 62px;
+    background-color: var(--button-color);
+    padding: 0 24px;
+    cursor: pointer;
+    text-align: left;
+    color: var(--white-color-text);
+    font-weight: 600;
+    transition: all .3s;
+    flex-shrink: 0;
+}
+
+.modal-house__select{
+    margin-top: 16px;
+    width: 312px;
+}
