@@ -62,29 +62,17 @@
           <span class="block-declaration">Counter block</span>
           <span>Here you can find counter to add a new counter to a house</span>
         </div>
-        <!--                <div class="house-top find">-->
-        <!--                    <span class="span-house ">Find house:</span>-->
-        <!--                    <select class="house__select" name="" id="">-->
-        <!--                        <option value="">1</option>-->
-        <!--                        <option value="">2</option>-->
-        <!--                        <option value="">3</option>-->
-        <!--                    </select>-->
-        <!--                    <button class="btn">Show</button>-->
-        <!--                </div>-->
+
         <div class="universal-input-block">
-          <input [(ngModel)]="newCounter.name" type="text" class="info-data" placeholder="Enter counter name">
-          <select [(ngModel)]="newCounter.type" class="house__select" name="" id="">
-            <option value="">gas</option>
-            <option value="">water</option>
-            <option value="">electro</option>
+          <select [(ngModel)]="newMeter.type" class="house__select" name="" id="">
+            <option *ngFor="let meter of meters; let i = index" [value]="i">{{meter.type}}</option>
           </select>
-          <input [(ngModel)]="newCounter.number" type="number" class="info-data" placeholder="Enter counter #">
-          <button (click)="createCounter()" class="btn">Create</button>
+          <input [(ngModel)]="newMeter.number" type="number" class="info-data" placeholder="Enter counter #">
+          <button (click)="createMeter()" class="btn">Create</button>
         </div>
         <div class="house-table">
           <div class="counter-house-table-inner counter-house-table-inner__header">
             <div class="house-table-block house-table-block__29">Counter id</div>
-            <div class="house-table-block house-table-block__29">Counter name</div>
             <div class="house-table-block house-table-block__29">Counter type</div>
             <div class="house-table-block house-table-block__right house-table-block__13">Counter number
             </div>
@@ -92,7 +80,6 @@
           <div class="house-counter">
             <div *ngFor="let meter of meters" class="counter-house-table-inner counter-house-table-inner__content">
               <div class="house-table-block house-table-block__left house-table-block__29">{{meter.id}}</div>
-              <div class="house-table-block house-table-block__left house-table-block__29">{{meter.name}}</div>
               <div class="house-table-block house-table-block__left house-table-block__29">{{meter.type}}</div>
               <div class="house-table-block house-table-block__right house-table-block__13">{{meter.number}}</div>
             </div>
@@ -120,17 +107,14 @@
         </div>
 
         <div class="house-top find">
-          <span class="span-house">Counter history:</span>
-          <select class="house__select" name="" id="">
-            <option value="">select counter 1</option>
-            <option value="">select counter 2</option>
-            <option value="">select counter 3</option>
+          <span class="span-house">Choose meter:</span>
+          <select [(ngModel)]="selectedMeter" (change)="onChangeMeter($event.target)" class="house__select" name="" id="">
+            <option *ngFor="let meter of meters; let i = index" [value]="i">{{meter.id}},{{meter.type}},{{meter.number}}</option>
           </select>
-          <button class="btn">Add</button>
         </div>
         <div class="universal-input-block">
-          <input type="text" class="info-data" placeholder="Enter ammount">
-          <input type="text" class="info-data" placeholder="Enter date #">
+          <input [(ngModel)]="newHistory.ammount" type="number" class="info-data" placeholder="Enter ammount">
+          <input [(ngModel)]="newHistory.ammount" type="date" class="info-data" placeholder="Enter date #">
           <button class="btn">Save history</button>
         </div>
       </div>
