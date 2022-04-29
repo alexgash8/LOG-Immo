@@ -10,7 +10,7 @@ let url = 'http://localhost:9999';
 export class ApiService {
 
   constructor(
-    private http:HttpClient,
+    private http : HttpClient,
   ) {}
 
   get httpOptions() {
@@ -24,7 +24,7 @@ export class ApiService {
 
 
   house = {
-    get: () => this.http.get(url + '/house', this.httpOptions).toPromise(),
+    get: () => this.http.get(url + '/house/houses', this.httpOptions).toPromise(),
     add: (info:any) => this.http.post(url + '/house', info, this.httpOptions).toPromise(),
     del: (id: any) => this.http.delete(url + '/house' + id, this.httpOptions).toPromise(),
     edit: (info: any) => this.http.put(url + '/house', info, this.httpOptions).toPromise()
@@ -37,5 +37,17 @@ export class ApiService {
     edit: (info: any) => this.http.put(url + '/meter', info, this.httpOptions).toPromise()
   };
 
+  history = {
+    get: (id: any) => this.http.get(url + '/history/' + id, this.httpOptions).toPromise(),
+    add: (info:any) => this.http.post(url + '/history', info, this.httpOptions).toPromise(),
+    del: (id: any) => this.http.delete(url + '/history' + id, this.httpOptions).toPromise(),
+    edit: (info: any) => this.http.put(url + '/history', info, this.httpOptions).toPromise()
+  };
 
+  payment = {
+    get: (id: any) => this.http.get(url + '/payment/' + id, this.httpOptions).toPromise(),
+    add: (info:any) => this.http.post(url + '/payment', info, this.httpOptions).toPromise(),
+    del: (id: any) => this.http.delete(url + '/payment' + id, this.httpOptions).toPromise(),
+    edit: (info: any) => this.http.put(url + '/payment', info, this.httpOptions).toPromise()
+  };
 }

@@ -30,9 +30,9 @@ public class PaymentController {
         service.deleteById(id);
     }
 
-    @GetMapping("/{id}")
-    public Payment findById(@PathVariable(name = "id") int id) {
-        return service.findById(id);
-    }
+//    @GetMapping("/{id}")
+//    public Payment findById(@PathVariable(name = "id") int id) {
+//        return service.findById(id);
+//    }
 
 }

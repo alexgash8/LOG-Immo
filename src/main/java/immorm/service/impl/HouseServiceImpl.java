@@ -3,17 +3,20 @@ package immorm.service.impl;
 import immorm.domain.House;
 import immorm.repository.HouseRepository;
 import immorm.service.CRUDService;
+import immorm.service.HouseService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @AllArgsConstructor
 @Transactional
-public class HouseService implements CRUDService<House> {
+public class HouseServiceImpl implements HouseService {
 
     HouseRepository repository;
 
@@ -33,7 +36,7 @@ public class HouseService implements CRUDService<House> {
     }
 
     @Override
-    public House findById(int id) {
-        return repository.findById(id).get();
+    public List<House> findAll() {
+        return repository.findAll();
     }
 }

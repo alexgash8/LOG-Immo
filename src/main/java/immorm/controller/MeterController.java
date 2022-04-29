@@ -31,9 +31,9 @@ public class MeterController {
         service.deleteById(id);
     }
 
-    @GetMapping("/{id}")
-    public Meter findById(@PathVariable(name = "id") int id) {
-        return service.findById(id);
-    }
+//    @GetMapping("/{id}")
+//    public Meter findById(@PathVariable(name = "id") int id) {
+//        return service.findById(id);
+//    }
 
 }

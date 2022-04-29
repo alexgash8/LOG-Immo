@@ -31,16 +31,16 @@ public class LeaserController {
         service.deleteById(id);
     }
 
-    @GetMapping("/{id}")
-    public Leaser findById(@PathVariable(name = "id") int id) {
-        return service.findById(id);
-    }
-
-    @GetMapping("short/{id}")
-    public LeaserDTO findShortById(@PathVariable(name = "id") int id) {
-        Leaser leaser = service.findById(id);
-
-        return new LeaserDTO(leaser);
-    }
+//    @GetMapping("/{id}")
+//    public Leaser findById(@PathVariable(name = "id") int id) {
+//        return service.findById(id);
+//    }
+//
+//    @GetMapping("short/{id}")
+//    public LeaserDTO findShortById(@PathVariable(name = "id") int id) {
+//        Leaser leaser = service.findById(id);
+//
+//        return new LeaserDTO(leaser);
+//    }
 
 }

@@ -34,8 +34,8 @@ public class PaymentService implements CRUDService<Payment> {
         repository.deleteById(id);
     }
 
-    @Override
-    public Payment findById(int id) {
-        return repository.findById(id).get();
-    }
+//    @Override
+//    public Payment findById(int id) {
+//        return repository.findById(id).get();
+//    }
 }

@@ -30,10 +30,10 @@ public class HistoryInOutController {
     public void deleteById(@PathVariable(name = "id") int id) {
         service.deleteById(id);
     }
-
-    @GetMapping("/{id}")
-    public HistoryInOut findById(@PathVariable(name = "id") int id) {
-        return service.findById(id);
-    }
+//
+//    @GetMapping("/{id}")
+//    public HistoryInOut findById(@PathVariable(name = "id") int id) {
+//        return service.findById(id);
+//    }
 
 }

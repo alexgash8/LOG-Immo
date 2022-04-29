@@ -8,13 +8,10 @@ import { ApiService} from 'src/app/services/api.service';
 })
 
 export class HouseComponent implements OnInit {
-  nextHouse: number = 100;
-  nextMeter: number = 100;
-  nextHistory: number = 100;
   selectedHouse: number = 0;
   selectedMeter: number = 0;
   showPopUp: boolean = false;
-  houses = [
+  houses : any = [
     {
       id: 1,
       countAppartments: 11,
@@ -42,6 +39,23 @@ export class HouseComponent implements OnInit {
       }
     },
   ];
+  histories : any = [
+    {
+      id : '1',
+      ammount : '33',
+      datum: '21-12-2211'
+    },
+    {
+      id : '2',
+      ammount : '22',
+      datum: '11-11-1111'
+    },{
+      id : '3',
+      ammount : '111',
+      datum: '22-22-2222'
+    },
+
+  ]
   meters : any = [
     {
       id: 1,
@@ -58,8 +72,28 @@ export class HouseComponent implements OnInit {
       type: 'ELECTRICITY',
       number: "0003235442400002"
     },
-
   ];
+  payments: any = [
+    {
+      id: '1',
+      text: 'fur wasser',
+      ammount: '333',
+      datum: '22-22-2222'
+    },{
+      id: '2',
+      text: 'fur Strom',
+      ammount: '444,3',
+      datum: '22-22-2222'
+    }
+  ]
+
+  newPayment: any = {
+    id: '',
+    text: '',
+    ammount: '',
+    datum: ''
+  }
+
   newHouse: any = {
     appNumb: '',
     city: '',
@@ -68,15 +102,25 @@ export class HouseComponent implements OnInit {
     plz: '',
     insurance: ''
   }
+
+  newHistory: any = {
+    id: '',
+    ammount: '',
+    datum: ''
+  }
+
   newMeter: any = {
     id: '',
     type: '',
     number: ''
   }
+
   constructor(private api: ApiService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    await this.getHouses();
   }
+
   openPopUp() {
     this.showPopUp = true;
   }
@@ -84,36 +128,63 @@ export class HouseComponent implements OnInit {
     this.showPopUp = false;
   }
 
-  onChange(deviceValue: any) {
+  onChangeHouse(deviceValue: any) {
     console.log(deviceValue, this.selectedHouse);
-    this.refreshMeters();
+    this.getMeters();
+    this.getPayments();
   }
 
   onChangeMeter(deviceValue: any) {
     console.log(deviceValue, this.selectedMeter);
-    this.refreshHistories();
+    this.getHistories();
   }
 
-  async refreshMeters() {
-    // this.meters = await this.api.meter.get(this.houses[this.selectedHouse].id);
+  async getHouses(){
+    this.houses = await this.api.house.get();
   }
 
-  async refreshHistories() {
-    // this.histories = await this.api.meter.get(this.houses[this.selectedHouse].id);
+  async getMeters() {
+    this.meters = await this.api.meter.get(this.houses[this.selectedHouse].id);
+  }
+
+  async getHistories() {
+    // this.histories = await this.api.meter.get(this.houses[this.selectedMeter].id);
+  }
+
+  async getPayments() {
+    // this.histories = await this.api.payment.get(this.houses[this.selectedHouse].id);
+  }
+
+  async createHistory() {
+    const newHistory = {
+      ammount: this.newHistory.ammount,
+      datum: this.newHistory.datum,
+    }
+    await this.api.history.add(newHistory);
+    this.getHistories();
+  }
+
+  async createPayment() {
+    const newPayment = {
+      ammount: this.newPayment.ammount,
+      datum: this.newPayment.datum,
+    }
+    await this.api.payment.add(newPayment);
+    this.getPayments();
   }
 
   async createMeter() {
-    const obj = {
-      id: this.nextMeter,
+    const newMeter = {
       type: this.newMeter.type,
-      number: this.newMeter.number
+      number: this.newMeter.number,
     }
+    await this.api.meter.add(newMeter);
+    this.getMeters();
   }
 
   async createHouse(){
     this.closePopUp();
-    const obj = {
-      id: this.nextHouse,
+    const newHouse = {
       countAppartments: this.newHouse.appNumb,
       insuranceNumber: this.newHouse.appNumb,
       address: {
@@ -124,8 +195,10 @@ export class HouseComponent implements OnInit {
         postalCode: this.newHouse.appNumb
       }
     };
-    const answer = await this.api.house.add(obj);
-    // this.houses = await this.api.house.get();
+    const answer = await this.api.house.add(newHouse);
     console.log('data:', this.newHouse);
+    this.getHouses();
   }
+
+
 }

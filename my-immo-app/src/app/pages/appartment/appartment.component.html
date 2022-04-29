@@ -21,16 +21,16 @@
       </div>
       <div class="house-top find">
         <span class="span-house">Find house:</span>
-        <select class="house__select" name="" id="">
-          <option value="">1</option>
-          <option value="">2</option>
-          <option value="">3</option>
+        <select [(ngModel)]="selectedHouseInAppartment" (change)="onChangeHouseInAppartment($event.target)" class="house__select" name="" id="">
+          <option *ngFor="let house of houses; let i = index" [value]="i">{{house.address.street}}
+            , {{house.address.houseNumber}}</option>
+<!--          <option value="">2</option>-->
+<!--          <option value="">3</option>-->
         </select>
-        <button class="btn">Show</button>
       </div>
       <div class="house-top">
         <span class="span-house">Select appartment</span>
-        <select class="house__select" name="" id="">
+        <select [(ngModel)]="selectedAppartment" (change)="onChangeAppartment($event.target)" class="house__select" name="" id="">
           <option value="">app 1</option>
           <option value="">app 2</option>
           <option value="">app 3</option>
@@ -82,25 +82,25 @@
     <!--        here goes table for appartmen comments-->
     <div class="house-table house-table-small">
       <div class="counter-house-table-inner counter-house-table-inner__header">
-        <div class="house-table-block house-table-block__29">id</div>
-        <div class="house-table-block house-table-block__29">Comment</div>
-        <div class="house-table-block house-table-block__right house-table-block__13">date</div>
+        <div class="house-table-block house-table-block__25">id</div>
+        <div class="house-table-block house-table-block__25">Comment</div>
+        <div class="house-table-block house-table-block__right house-table-block__18">date</div>
       </div>
       <div class="house-counter">
         <div class="counter-house-table-inner counter-house-table-inner__content">
-          <div class="house-table-block house-table-block__left house-table-block__29">1</div>
-          <div class="house-table-block house-table-block__left house-table-block__29">bla bla bla</div>
-          <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">1</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">bla bla bla</div>
+          <div class="house-table-block house-table-block__right house-table-block__18">11.04.2022</div>
         </div>
         <div class="counter-house-table-inner counter-house-table-inner__content">
-          <div class="house-table-block house-table-block__left house-table-block__29">2</div>
-          <div class="house-table-block house-table-block__left house-table-block__29">bla bla bla</div>
-          <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">2</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">bla bla bla</div>
+          <div class="house-table-block house-table-block__right house-table-block__18">11.04.2022</div>
         </div>
         <div class="counter-house-table-inner counter-house-table-inner__content">
-          <div class="house-table-block house-table-block__left house-table-block__29">3</div>
-          <div class="house-table-block house-table-block__left house-table-block__29">bla bla bla</div>
-          <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">3</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">bla bla bla</div>
+          <div class="house-table-block house-table-block__right house-table-block__18">11.04.2022</div>
         </div>
 
       </div>
@@ -144,30 +144,30 @@
 
     <div class="house-table">
       <div class="counter-house-table-inner counter-house-table-inner__header">
-        <div class="house-table-block house-table-block__29">Counter id</div>
-        <div class="house-table-block house-table-block__29">Counter name</div>
-        <div class="house-table-block house-table-block__29">Counter type</div>
-        <div class="house-table-block house-table-block__right house-table-block__13">Counter number
+        <div class="house-table-block house-table-block__25">Counter id</div>
+        <div class="house-table-block house-table-block__25">Counter name</div>
+        <div class="house-table-block house-table-block__25">Counter type</div>
+        <div class="house-table-block house-table-block__right house-table-block__18">Counter number
         </div>
       </div>
       <div class="house-counter">
         <div class="counter-house-table-inner counter-house-table-inner__content">
-          <div class="house-table-block house-table-block__left house-table-block__29">1111</div>
-          <div class="house-table-block house-table-block__left house-table-block__29">aaaaa</div>
-          <div class="house-table-block house-table-block__left house-table-block__29">ggggg</div>
-          <div class="house-table-block house-table-block__right house-table-block__13">88888</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">1111</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">aaaaa</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">ggggg</div>
+          <div class="house-table-block house-table-block__right house-table-block__18">88888</div>
         </div>
         <div class="counter-house-table-inner counter-house-table-inner__content">
-          <div class="house-table-block house-table-block__left house-table-block__29">1111</div>
-          <div class="house-table-block house-table-block__left house-table-block__29">aaaaa</div>
-          <div class="house-table-block house-table-block__left house-table-block__29">ggggg</div>
-          <div class="house-table-block house-table-block__right house-table-block__13">88888</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">1111</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">aaaaa</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">ggggg</div>
+          <div class="house-table-block house-table-block__right house-table-block__18">88888</div>
         </div>
         <div class="counter-house-table-inner counter-house-table-inner__content">
-          <div class="house-table-block house-table-block__left house-table-block__29">1111</div>
-          <div class="house-table-block house-table-block__left house-table-block__29">aaaaa</div>
-          <div class="house-table-block house-table-block__left house-table-block__29">ggggg</div>
-          <div class="house-table-block house-table-block__right house-table-block__13">88888</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">1111</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">aaaaa</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">ggggg</div>
+          <div class="house-table-block house-table-block__right house-table-block__18">88888</div>
         </div>
       </div>
 
@@ -213,25 +213,25 @@
     </div>
     <div class="house-table">
       <div class="counter-house-table-inner counter-house-table-inner__header">
-        <div class="house-table-block house-table-block__29">Counter id</div>
-        <div class="house-table-block house-table-block__29">Ammount</div>
-        <div class="house-table-block house-table-block__right house-table-block__13">date</div>
+        <div class="house-table-block house-table-block__25">Counter id</div>
+        <div class="house-table-block house-table-block__25">Ammount</div>
+        <div class="house-table-block house-table-block__right house-table-block__18">date</div>
       </div>
       <div class="house-counter">
         <div class="counter-house-table-inner counter-house-table-inner__content">
-          <div class="house-table-block house-table-block__left house-table-block__29">1</div>
-          <div class="house-table-block house-table-block__left house-table-block__29">bla bla bla</div>
-          <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">1</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">bla bla bla</div>
+          <div class="house-table-block house-table-block__right house-table-block__18">11.04.2022</div>
         </div>
         <div class="counter-house-table-inner counter-house-table-inner__content">
-          <div class="house-table-block house-table-block__left house-table-block__29">2</div>
-          <div class="house-table-block house-table-block__left house-table-block__29">bla bla bla</div>
-          <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">2</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">bla bla bla</div>
+          <div class="house-table-block house-table-block__right house-table-block__18">11.04.2022</div>
         </div>
         <div class="counter-house-table-inner counter-house-table-inner__content">
-          <div class="house-table-block house-table-block__left house-table-block__29">3</div>
-          <div class="house-table-block house-table-block__left house-table-block__29">bla bla bla</div>
-          <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">3</div>
+          <div class="house-table-block house-table-block__left house-table-block__25">bla bla bla</div>
+          <div class="house-table-block house-table-block__right house-table-block__18">11.04.2022</div>
         </div>
 
       </div>

@@ -32,8 +32,8 @@ public class HistoryInOutService implements CRUDService<HistoryInOut> {
         repository.deleteById(id);
     }
 
-    @Override
-    public HistoryInOut findById(int id) {
-        return repository.findById(id).get();
-    }
+//    @Override
+//    public HistoryInOut findById(int id) {
+//        return repository.findById(id).get();
+//    }
 }

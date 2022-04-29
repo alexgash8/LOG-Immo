@@ -4,6 +4,7 @@ import immorm.domain.Appartment;
 import immorm.domain.Leaser;
 import immorm.repository.AppartmentRepository;
 import immorm.repository.LeaserRepository;
+import immorm.service.AppartmentService;
 import immorm.service.CRUDService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -11,11 +12,13 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @AllArgsConstructor
 @Transactional
-public class AppartmentService implements CRUDService<Appartment> {
+public class AppartmentServiceImpl implements AppartmentService {
 
     AppartmentRepository repository;
 
@@ -38,7 +41,7 @@ public class AppartmentService implements CRUDService<Appartment> {
     }
 
     @Override
-    public Appartment findById(int id) {
-        return repository.findById(id);
+    public List<Appartment> findAllByHouseId(int id) {
+        return repository.findAllByHouseId(id);
     }
 }

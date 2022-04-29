@@ -31,9 +31,9 @@ public class CommentController {
         service.deleteById(id);
     }
 
-    @GetMapping("/{id}")
-    public Comment findById(@PathVariable(name = "id") int id) {
-        return service.findById(id);
-    }
+//    @GetMapping("/{id}")
+//    public Comment findById(@PathVariable(name = "id") int id) {
+//        return service.findById(id);
+//    }
 
 }

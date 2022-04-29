@@ -36,8 +36,8 @@ public class LeaserService implements CRUDService<Leaser> {
         repository.deleteById(id);
     }
 
-    @Override
-    public Leaser findById(int id) {
-        return repository.findById(id);
-    }
+//    @Override
+//    public Leaser findById(int id) {
+//        return repository.findById(id);
+//    }
 }

@@ -32,9 +32,9 @@ public class AppartmentController {
         service.deleteById(id);
     }
 
-    @GetMapping("/{id}")
-    public Appartment findById(@PathVariable(name = "id") int id) {
-        return service.findById(id);
-    }
+//    @GetMapping("/{id}")
+//    public Appartment findById(@PathVariable(name = "id") int id) {
+//        return service.findAllById(id);
+//    }
 
 }

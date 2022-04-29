@@ -21,7 +21,7 @@
       </div>
       <div class="house-top find">
         <span class="span-house">Find house:</span>
-        <select [(ngModel)]="selectedHouse" (change)="onChange($event.target)" class="house__select" name="" id="">
+        <select [(ngModel)]="selectedHouse" (change)="onChangeHouse($event.target)" class="house__select" name="" id="">
 
           <option *ngFor="let house of houses; let i = index" [value]="i">{{house.address.street}}
             , {{house.address.houseNumber}}</option>
@@ -70,41 +70,14 @@
           <input [(ngModel)]="newMeter.number" type="number" class="info-data" placeholder="Enter counter #">
           <button (click)="createMeter()" class="btn">Create</button>
         </div>
-        <div class="house-table">
-          <div class="counter-house-table-inner counter-house-table-inner__header">
-            <div class="house-table-block house-table-block__29">Counter id</div>
-            <div class="house-table-block house-table-block__29">Counter type</div>
-            <div class="house-table-block house-table-block__right house-table-block__13">Counter number
-            </div>
-          </div>
-          <div class="house-counter">
-            <div *ngFor="let meter of meters" class="counter-house-table-inner counter-house-table-inner__content">
-              <div class="house-table-block house-table-block__left house-table-block__29">{{meter.id}}</div>
-              <div class="house-table-block house-table-block__left house-table-block__29">{{meter.type}}</div>
-              <div class="house-table-block house-table-block__right house-table-block__13">{{meter.number}}</div>
-            </div>
-          </div>
 
-        </div>
-        <div class="pagination">
-                            <span>  <svg viewBox="0 0 25 24">
-                                    <path d="M15.91 7.41L11.33 12L15.91 16.59L14.5 18L8.49997 12L14.5 6L15.91 7.41Z"/>
-                                    </svg>
+        <app-table
+          [items]="meters"
+          [options]="{
+            columnNames:['Counter ID', 'Counter type', 'Counter Number'],
+            fieldNames:['id', 'type', 'number']}"></app-table>
 
-
-                            </span>
-          <ul>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-          </ul>
-          <span class="pagination-active">  <svg viewBox="0 0 25 24">
-                                <path d="M9.09003 16.59L13.67 12L9.09003 7.41L10.5 6L16.5 12L10.5 18L9.09003 16.59Z"/>
-                                </svg>
-                        </span>
-        </div>
+        <app-pagination></app-pagination>
 
         <div class="house-top find">
           <span class="span-house">Choose meter:</span>
@@ -114,131 +87,96 @@
         </div>
         <div class="universal-input-block">
           <input [(ngModel)]="newHistory.ammount" type="number" class="info-data" placeholder="Enter ammount">
-          <input [(ngModel)]="newHistory.ammount" type="date" class="info-data" placeholder="Enter date #">
-          <button class="btn">Save history</button>
+          <input [(ngModel)]="newHistory.datum" type="date" class="info-data" placeholder="Enter date #">
+          <button (click)="createHistory()" class="btn">Save history</button>
         </div>
       </div>
-      <div class="house-table">
-        <div class="counter-house-table-inner counter-house-table-inner__header">
-          <div class="house-table-block house-table-block__29">Counter id</div>
-          <div class="house-table-block house-table-block__29">Ammount</div>
-          <div class="house-table-block house-table-block__right house-table-block__13">date</div>
-        </div>
-        <div class="house-counter">
-          <div class="counter-house-table-inner counter-house-table-inner__content">
-            <div class="house-table-block house-table-block__left house-table-block__29">1</div>
-            <div class="house-table-block house-table-block__left house-table-block__29">170,88</div>
-            <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
-          </div>
-          <div class="counter-house-table-inner counter-house-table-inner__content">
-            <div class="house-table-block house-table-block__left house-table-block__29">1</div>
-            <div class="house-table-block house-table-block__left house-table-block__29">170,88</div>
-            <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
-          </div>
-          <div class="counter-house-table-inner counter-house-table-inner__content">
-            <div class="house-table-block house-table-block__left house-table-block__29">1</div>
-            <div class="house-table-block house-table-block__left house-table-block__29">170,88</div>
-            <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
-          </div>
 
-        </div>
+      <app-table
+        [items]="histories"
+        [options]="{
+            columnNames:['History ID', 'Ammount', 'Date'],
+            fieldNames:['id', 'ammount', 'datum']}"></app-table>
 
-      </div>
-      <div class="pagination">
-                            <span>  <svg viewBox="0 0 25 24">
-                                    <path d="M15.91 7.41L11.33 12L15.91 16.59L14.5 18L8.49997 12L14.5 6L15.91 7.41Z"/>
-                                    </svg>
+      <app-pagination></app-pagination>
 
+<!--      <div class="house-table">-->
+<!--        <div class="counter-house-table-inner counter-house-table-inner__header">-->
+<!--          <div class="house-table-block house-table-block__25">Counter id</div>-->
+<!--          <div class="house-table-block house-table-block__25">Ammount</div>-->
+<!--          <div class="house-table-block house-table-block__right house-table-block__18">date</div>-->
+<!--        </div>-->
+<!--        <div class="house-counter">-->
+<!--          <div *ngFor="let history of histories" class="counter-house-table-inner counter-house-table-inner__content">-->
+<!--            <div class="house-table-block house-table-block__left house-table-block__25">{{history.id}}</div>-->
+<!--            <div class="house-table-block house-table-block__left house-table-block__25">{{history.ammount}}</div>-->
+<!--            <div class="house-table-block house-table-block__right house-table-block__18">{{history.datum}}</div>-->
+<!--          </div>-->
+<!--        </div>-->
 
-                            </span>
-        <ul>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-        </ul>
-        <span class="pagination-active">  <svg viewBox="0 0 25 24">
-                                <path d="M9.09003 16.59L13.67 12L9.09003 7.41L10.5 6L16.5 12L10.5 18L9.09003 16.59Z"/>
-                                </svg>
-                        </span>
-      </div>
 
       <div class="header-top">
         <span class="block-declaration">Payments block</span>
         <span>Here you can find payments or add new payment</span>
       </div>
-      <!--            <div class="house-top find">-->
-      <!--                <span class="span-house">Find house:</span>-->
-      <!--                <select class="house__select" name="" id="">-->
-      <!--                    <option value="">1</option>-->
-      <!--                    <option value="">2</option>-->
-      <!--                    <option value="">3</option>-->
-      <!--                </select>-->
-      <!--                <button class="btn">Show</button>-->
-      <!--            </div>-->
       <div class="universal-input-block">
-        <input type="text" class="info-data" placeholder="Enter text about payment">
-        <input type="text" class="info-data" placeholder="Enter ammount">
-        <input type="text" class="info-data" placeholder="2022-02-24">
-        <button class="btn">Show</button>
+        <input [(ngModel)]="newPayment.text" type="text" class="info-data" placeholder="Enter text about payment">
+        <input [(ngModel)]="newPayment.ammount" type="text" class="info-data" placeholder="Enter ammount">
+        <input [(ngModel)]="newPayment.datum" type="text" class="info-data" placeholder="2022-02-24">
+        <button class="btn">Add</button>
       </div>
       <div class="payments-history">
         <span>Payments history</span>
       </div>
-      <div class="house-table">
-        <div class="counter-house-table-inner counter-house-table-inner__header">
-          <div class="house-table-block house-table-block__29">id</div>
-          <div class="house-table-block house-table-block__29">Payment text field</div>
-          <div class="house-table-block house-table-block__29">Ammount</div>
-          <div class="house-table-block house-table-block__right house-table-block__13">date</div>
-        </div>
-        <div class="house-counter">
-          <div class="counter-house-table-inner counter-house-table-inner__content">
-            <div class="house-table-block house-table-block__left house-table-block__29">1</div>
-            <div class="house-table-block house-table-block__left house-table-block__29">Payment for water Spring 2022
-            </div>
-            <div class="house-table-block house-table-block__left house-table-block__29">170,88</div>
-            <div class="house-table-block house-table-block__right house-table-block__13">11.04.2022</div>
-          </div>
-          <div class="counter-house-table-inner counter-house-table-inner__content">
-            <div class="house-table-block house-table-block__left house-table-block__29">1111</div>
-            <div class="house-table-block house-table-block__left house-table-block__29">aaaaa</div>
-            <div class="house-table-block house-table-block__left house-table-block__29">ggggg</div>
-            <div class="house-table-block house-table-block__right house-table-block__13">88888</div>
-          </div>
-          <div class="counter-house-table-inner counter-house-table-inner__content">
-            <div class="house-table-block house-table-block__left house-table-block__29">1111</div>
-            <div class="house-table-block house-table-block__left house-table-block__29">aaaaa</div>
-            <div class="house-table-block house-table-block__left house-table-block__29">ggggg</div>
-            <div class="house-table-block house-table-block__right house-table-block__13">88888</div>
-          </div>
-        </div>
+
+      <app-table
+        [items]="payments"
+        [options]="{
+            columnNames:['Payment ID', 'Payment text', 'Ammount', 'Date'],
+            fieldNames:['id', 'text', 'ammount', 'datum']}"></app-table>
+
+      <app-pagination></app-pagination>
+
+<!--      <div class="house-table">-->
+<!--        <div class="counter-house-table-inner counter-house-table-inner__header">-->
+<!--          <div class="house-table-block house-table-block__25">id</div>-->
+<!--          <div class="house-table-block house-table-block__25">Payment text field</div>-->
+<!--          <div class="house-table-block house-table-block__25">Ammount</div>-->
+<!--          <div class="house-table-block house-table-block__right house-table-block__18">date</div>-->
+<!--        </div>-->
+<!--        <div class="house-counter">-->
+<!--          <div *ngFor="let payment of payments" class="counter-house-table-inner counter-house-table-inner__content">-->
+<!--            <div class="house-table-block house-table-block__left house-table-block__25">{{payment.id}}</div>-->
+<!--            <div class="house-table-block house-table-block__left house-table-block__25">{{payment.text}}-->
+<!--            </div>-->
+<!--            <div class="house-table-block house-table-block__left house-table-block__25">{{payment.ammount}}</div>-->
+<!--            <div class="house-table-block house-table-block__right house-table-block__18">{{payment.datum}}</div>-->
+<!--          </div>-->
+<!--        </div>-->
 
       </div>
-      <div class="pagination">
-                            <span>  <svg viewBox="0 0 25 24">
-                                    <path d="M15.91 7.41L11.33 12L15.91 16.59L14.5 18L8.49997 12L14.5 6L15.91 7.41Z"/>
-                                    </svg>
+<!--      <div class="pagination">-->
+<!--                            <span>  <svg viewBox="0 0 25 24">-->
+<!--                                    <path d="M15.91 7.41L11.33 12L15.91 16.59L14.5 18L8.49997 12L14.5 6L15.91 7.41Z"/>-->
+<!--                                    </svg>-->
 
 
-                            </span>
-        <ul>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-        </ul>
-        <span class="pagination-active">  <svg viewBox="0 0 25 24">
-                                <path d="M9.09003 16.59L13.67 12L9.09003 7.41L10.5 6L16.5 12L10.5 18L9.09003 16.59Z"/>
-                                </svg>
-                        </span>
-      </div>
-      <!--        here goes table for payments histories with pagination-->
+<!--                            </span>-->
+<!--        <ul>-->
+<!--          <li><a href="#">1</a></li>-->
+<!--          <li><a href="#">2</a></li>-->
+<!--          <li><a href="#">3</a></li>-->
+<!--          <li><a href="#">4</a></li>-->
+<!--          <li><a href="#">5</a></li>-->
+<!--        </ul>-->
+<!--        <span class="pagination-active">  <svg viewBox="0 0 25 24">-->
+<!--                                <path d="M9.09003 16.59L13.67 12L9.09003 7.41L10.5 6L16.5 12L10.5 18L9.09003 16.59Z"/>-->
+<!--                                </svg>-->
+<!--                        </span>-->
+<!--      </div>-->
     </div>
   </div>
-</div>
+
 
 <div class="fade-block" [class]="(showPopUp)?'':'hidden'">
   <div class="modal-window">
