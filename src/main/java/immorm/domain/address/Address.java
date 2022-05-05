@@ -18,6 +18,8 @@ public class Address {
     @Column(name = "address_id")
     int id;
 
+    String city;
+
     String street;
 
     @Column(name = "house_number")

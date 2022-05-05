@@ -1,0 +1,22 @@
+<div class="house-table">
+  <div class="counter-house-table-inner counter-house-table-inner__header">
+    <div
+      *ngFor="let columnName of options.columnNames; let i = index"
+      class="house-table-block house-table-block__25"
+      [class]="(i == options.columnNames.length - 1) ? 'house-table-block__right house-table-block__18': 'x'"
+    >{{columnName}}</div>
+<!--    <div class="house-table-block house-table-block__25">Counter type</div>-->
+<!--    <div class="house-table-block house-table-block__right house-table-block__18">Counter number-->
+<!--    </div>-->
+  </div>
+  <div class="house-counter">
+    <div *ngFor="let item of items; let i = index" class="counter-house-table-inner counter-house-table-inner__content">
+      <div *ngFor="let fieldName of options.fieldNames; let i = index"
+           class="house-table-block house-table-block__left house-table-block__25"
+           [class]="(i == options.fieldNames.length - 1) ? 'house-table-block__right house-table-block__18': 'x'"
+      >{{item[fieldName]}}</div>
+<!--      <div class="house-table-block house-table-block__left house-table-block__25">{{item.type}}</div>-->
+<!--      <div class="house-table-block house-table-block__right house-table-block__18">{{item.number}}</div>-->
+    </div>
+  </div>
+</div>

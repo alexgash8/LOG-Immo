@@ -31,10 +31,10 @@ export class ApiService {
   };
 
   meter = {
-    get: (id: any) => this.http.get(url + '/meter/' + id, this.httpOptions).toPromise(),
-    add: (info:any) => this.http.post(url + '/meter', info, this.httpOptions).toPromise(),
-    del: (id: any) => this.http.delete(url + '/meter' + id, this.httpOptions).toPromise(),
-    edit: (info: any) => this.http.put(url + '/meter', info, this.httpOptions).toPromise()
+    get: (id: any) => this.http.get(url + '/house-meter/' + id, this.httpOptions).toPromise(),
+    add: (info:any) => this.http.post(url + '/house-meter', info, this.httpOptions).toPromise(),
+    del: (id: any) => this.http.delete(url + '/house-meter' + id, this.httpOptions).toPromise(),
+    edit: (info: any) => this.http.put(url + '/house-meter', info, this.httpOptions).toPromise()
   };
 
   history = {

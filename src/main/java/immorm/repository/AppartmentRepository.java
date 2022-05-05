@@ -2,6 +2,7 @@ package immorm.repository;
 
 import immorm.domain.Appartment;
 import immorm.domain.Leaser;
+import immorm.domain.meter.AppartmentMeter;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 

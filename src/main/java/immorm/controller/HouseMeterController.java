@@ -1,28 +1,32 @@
 package immorm.controller;
 
+import immorm.domain.meter.HouseMeter;
 import immorm.domain.meter.Meter;
 import immorm.domain.payment.Payment;
 import immorm.service.CRUDService;
+import immorm.service.HouseMeterService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("meter")
+@RequestMapping("house-meter")
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @AllArgsConstructor
-public class MeterController {
+public class HouseMeterController {
 
-    CRUDService<Meter> service;
+    HouseMeterService service;
 
     @PostMapping
-    public void save(@RequestBody Meter meter) {
+    public void save(@RequestBody HouseMeter meter) {
         service.save(meter);
     }
 
     @PutMapping
-    public void update(@RequestBody Meter meter) {
+    public void update(@RequestBody HouseMeter meter) {
         service.save(meter);
     }
 
@@ -31,9 +35,9 @@ public class MeterController {
         service.deleteById(id);
     }
 
-//    @GetMapping("/{id}")
-//    public Meter findById(@PathVariable(name = "id") int id) {
-//        return service.findById(id);
-//    }
+    @GetMapping("/{id}")
+    public List<HouseMeter> findAllById(@PathVariable(name = "id") int houseId) {
+        return service.findAllByHouseId(houseId);
+    }
 
 }

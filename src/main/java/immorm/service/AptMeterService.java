@@ -1,10 +1,10 @@
 package immorm.service;
 
+import immorm.domain.meter.AppartmentMeter;
 import immorm.domain.meter.HouseMeter;
-import immorm.domain.meter.Meter;
 
 import java.util.List;
 
-public interface HouseMeterService extends CRUDService<HouseMeter> {
-    List<HouseMeter> findAllByHouseId(int id);
+public interface AptMeterService extends CRUDService<AppartmentMeter> {
+    List<AppartmentMeter> findAllByAppartmentId(int id);
 }

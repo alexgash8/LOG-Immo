@@ -33,11 +33,6 @@ public class HouseController {
         service.deleteById(id);
     }
 
-//    @GetMapping("/{id}")
-//    public House findById(@PathVariable(name = "id") int id) {
-//        return service.findById(id);
-//    }
-
     @GetMapping("/houses")
     public List<House> findAll() {
         return service.findAll();

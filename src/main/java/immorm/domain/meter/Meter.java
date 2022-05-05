@@ -25,10 +25,10 @@ import java.util.Set;
 @Table(name = "meters")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
-@JsonSubTypes({
-        @JsonSubTypes.Type(value = AppartmentMeter.class, name = "AptMeter"),
-        @JsonSubTypes.Type(value = HouseMeter.class, name = "HMeter")}
-)
+//@JsonSubTypes({
+//        @JsonSubTypes.Type(value = AppartmentMeter.class, name = "AptMeter"),
+//        @JsonSubTypes.Type(value = HouseMeter.class, name = "HMeter")}
+//)
 public abstract class Meter {
 
     @Id
@@ -41,6 +41,10 @@ public abstract class Meter {
     @Enumerated(EnumType.STRING)
     @JsonProperty(value = "meter_type")
     MeterType mType;
+
+    @Enumerated(EnumType.STRING)
+    @JsonProperty(value = "strategy_type")
+    MeterStrategy sType;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.EAGER)
     @JoinTable(name = "meter_history", joinColumns = @JoinColumn(name = "Meter_ID"),

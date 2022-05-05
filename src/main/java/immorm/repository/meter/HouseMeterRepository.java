@@ -1,4 +1,7 @@
 package immorm.repository.meter;
 
-public interface HouseMeterRepository {
+import immorm.domain.meter.HouseMeter;
+
+public interface HouseMeterRepository extends MeterRepository<HouseMeter> {
+
 }

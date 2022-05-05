@@ -1,7 +1,7 @@
 package immorm.domain.meter;
 
-public enum MeterType {
-    HEAT,
-    WATER,
+public enum MeterStrategy {
+    HMeter,
+    AptMeter,
     ELECTRICITY
 }

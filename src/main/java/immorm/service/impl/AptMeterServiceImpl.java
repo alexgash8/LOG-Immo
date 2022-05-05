@@ -2,9 +2,11 @@ package immorm.service.impl;
 
 import immorm.domain.meter.AppartmentMeter;
 import immorm.domain.meter.HouseMeter;
-import immorm.domain.meter.Meter;
+import immorm.repository.AppartmentRepository;
+import immorm.repository.meter.AptMeterRepository;
 import immorm.repository.meter.MeterRepository;
-import immorm.service.HouseMeterService;
+import immorm.service.AppartmentService;
+import immorm.service.AptMeterService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -15,28 +17,28 @@ import java.util.List;
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @AllArgsConstructor
-public class HouseMeterServiceImpl implements HouseMeterService {
+public class AptMeterServiceImpl implements AptMeterService {
 
-    MeterRepository<HouseMeter> houseRepository;
+    AptMeterRepository aptRepository;
 
     @Override
-    public void save(HouseMeter meter) {
-        houseRepository.save(meter);
+    public void save(AppartmentMeter meter) {
+        aptRepository.save(meter);
     }
 
     @Override
-    public void update(HouseMeter meter) {
-        houseRepository.save(meter);
+    public void update(AppartmentMeter meter) {
+        aptRepository.save(meter);
     }
 
     @Override
     public void deleteById(int id) {
 
-        houseRepository.deleteById(id);
+        aptRepository.deleteById(id);
     }
 
     @Override
-    public List<HouseMeter> findAllByHouseId(int id) {
-        return houseRepository.findAll();
+    public List<AppartmentMeter> findAllByAppartmentId(int id) {
+        return aptRepository.findAllByAppartmentId(id);
     }
 }

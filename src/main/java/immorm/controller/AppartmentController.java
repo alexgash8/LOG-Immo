@@ -1,13 +1,13 @@
 package immorm.controller;
 
 import immorm.domain.Appartment;
-import immorm.domain.House;
-import immorm.service.CRUDService;
+import immorm.service.AppartmentService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("appartment")
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class AppartmentController {
 
-    CRUDService<Appartment> service;
+    AppartmentService service;
 
     @PostMapping
     public void save(@RequestBody Appartment appartment) {
@@ -32,9 +32,9 @@ public class AppartmentController {
         service.deleteById(id);
     }
 
-//    @GetMapping("/{id}")
-//    public Appartment findById(@PathVariable(name = "id") int id) {
-//        return service.findAllById(id);
-//    }
+    @GetMapping("/{id}")
+    public List<Appartment> findAllById(@PathVariable(name = "id") int houseId) {
+        return service.findAllByHouseId(houseId);
+    }
 
 }

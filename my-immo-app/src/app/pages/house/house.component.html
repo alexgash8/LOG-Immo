@@ -64,8 +64,8 @@
         </div>
 
         <div class="universal-input-block">
-          <select [(ngModel)]="newMeter.type" class="house__select" name="" id="">
-            <option *ngFor="let meter of meters; let i = index" [value]="i">{{meter.type}}</option>
+          <select [(ngModel)]="selectedMeterType" (change)="onChangeMeterType($event.target)" class="house__select" name="" id="">
+            <option *ngFor="let meter of meterTypes; let i = index" [value]="i">{{meter.meter_type}}</option>
           </select>
           <input [(ngModel)]="newMeter.number" type="number" class="info-data" placeholder="Enter counter #">
           <button (click)="createMeter()" class="btn">Create</button>
@@ -75,7 +75,7 @@
           [items]="meters"
           [options]="{
             columnNames:['Counter ID', 'Counter type', 'Counter Number'],
-            fieldNames:['id', 'type', 'number']}"></app-table>
+            fieldNames:['id', 'meter_type', 'number']}"></app-table>
 
         <app-pagination></app-pagination>
 
@@ -190,8 +190,8 @@
       </svg>
 
       <div class="create-info-block">
-        <span class="notation">Number appartments</span>
-        <input [(ngModel)]="newHouse.appNumb" type="number" class="input-data-modal" placeholder="17">
+        <span class="notation">Count appartments</span>
+        <input [(ngModel)]="newHouse.countAppartments" type="number" class="input-data-modal" placeholder="17">
       </div>
 
       <div class="create-info-block">
@@ -204,15 +204,15 @@
       </div>
       <div class="create-info-block">
         <span class="notation">Number</span>
-        <input [(ngModel)]="newHouse.number" type="text" class="input-data-modal" placeholder="171">
+        <input [(ngModel)]="newHouse.house_Number" type="text" class="input-data-modal" placeholder="171">
       </div>
       <div class="create-info-block">
         <span class="notation">PLZ</span>
-        <input [(ngModel)]="newHouse.plz" type="text" class="input-data-modal" placeholder="22457">
+        <input [(ngModel)]="newHouse.postal_code" type="text" class="input-data-modal" placeholder="22457">
       </div>
       <div class="create-info-block">
         <span class="notation">Insurance number</span>
-        <input [(ngModel)]="newHouse.insurance" type="text" class="input-data-modal" placeholder="750">
+        <input [(ngModel)]="newHouse.insuranceNumber" type="text" class="input-data-modal" placeholder="750">
       </div>
 
       <button (click)="createHouse()" class="btn-modal">Create House</button>
