@@ -1,10 +1,7 @@
 package immorm.service.impl;
 
-import immorm.domain.House;
-import immorm.domain.meter.AppartmentMeter;
 import immorm.domain.meter.Meter;
-import immorm.repository.MeterRepository;
-import immorm.service.CRUDService;
+import immorm.repository.meter.MeterRepository;
 import immorm.service.MeterService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
