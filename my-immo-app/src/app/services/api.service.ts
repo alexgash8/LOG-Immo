@@ -45,7 +45,7 @@ export class ApiService {
   };
 
   payment = {
-    get: (id: any) => this.http.get(url + '/payment/' + id, this.httpOptions).toPromise(),
+    get: (id: any) => this.http.get(url + '/house-payment/' + id, this.httpOptions).toPromise(),
     add: (info:any) => this.http.post(url + '/payment', info, this.httpOptions).toPromise(),
     del: (id: any) => this.http.delete(url + '/payment' + id, this.httpOptions).toPromise(),
     edit: (info: any) => this.http.put(url + '/payment', info, this.httpOptions).toPromise()

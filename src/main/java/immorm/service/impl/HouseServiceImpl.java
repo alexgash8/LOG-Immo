@@ -39,4 +39,9 @@ public class HouseServiceImpl implements HouseService {
     public List<House> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public House getById(Integer id) {
+        return repository.getById(id);
+    }
 }

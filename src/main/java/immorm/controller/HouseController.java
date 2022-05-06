@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -17,6 +18,8 @@ import java.util.List;
 public class HouseController {
 
     HouseService service;
+//    @PostMapping
+//    public void find(@RequestBody House house) { service.find(house);}
 
     @PostMapping
     public void save(@RequestBody House house) {
@@ -31,6 +34,11 @@ public class HouseController {
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable(name = "id") int id) {
         service.deleteById(id);
+    }
+
+    @GetMapping("/{id}")
+    public House getById(Integer id) {
+        return service.getById(id);
     }
 
     @GetMapping("/houses")

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface HouseService extends CRUDService<House> {
     List<House> findAll();
+    House getById(Integer id);
 }

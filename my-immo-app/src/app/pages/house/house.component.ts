@@ -17,7 +17,7 @@ export class HouseComponent implements OnInit {
   newPayment: any = {
     id: '',
     text: '',
-    ammount: '',
+    amount: '',
     datum: ''
   }
 
@@ -67,7 +67,6 @@ export class HouseComponent implements OnInit {
 
   onChangeMeterType(deviceValue: any) {
     console.log(deviceValue, this.selectedMeterType);
-    this.getMeters();
   }
 
   onChangeMeter(deviceValue: any) {
@@ -79,10 +78,6 @@ export class HouseComponent implements OnInit {
     this.houses = await this.api.house.get();
   }
 
-  async getMeterTypes(){
-    // this
-  }
-
   async getMeters() {
     this.meters = await this.api.meter.get(this.houses[this.selectedHouse].id);
   }
@@ -92,7 +87,7 @@ export class HouseComponent implements OnInit {
   }
 
   async getPayments() {
-    // this.histories = await this.api.payment.get(this.houses[this.selectedHouse].id);
+    this.payments = await this.api.payment.get(this.houses[this.selectedHouse].id);
   }
 
   async createHistory() {
@@ -106,7 +101,8 @@ export class HouseComponent implements OnInit {
 
   async createPayment() {
     const newPayment = {
-      ammount: this.newPayment.ammount,
+      amount: this.newPayment.amount,
+      text: this.newPayment.text,
       datum: this.newPayment.datum,
     }
     await this.api.payment.add(newPayment);
@@ -117,7 +113,6 @@ export class HouseComponent implements OnInit {
     const newMeter = {
       meter_type: this.newMeter.meter_type,
       number: this.newMeter.number,
-      type: 'HMeter',
       house: {
         id: this.newHouse.id
       }

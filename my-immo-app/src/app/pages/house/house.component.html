@@ -121,9 +121,9 @@
       </div>
       <div class="universal-input-block">
         <input [(ngModel)]="newPayment.text" type="text" class="info-data" placeholder="Enter text about payment">
-        <input [(ngModel)]="newPayment.ammount" type="text" class="info-data" placeholder="Enter ammount">
-        <input [(ngModel)]="newPayment.datum" type="text" class="info-data" placeholder="2022-02-24">
-        <button class="btn">Add</button>
+        <input [(ngModel)]="newPayment.amount" type="number" class="info-data" placeholder="Enter ammount">
+        <input [(ngModel)]="newPayment.datum" type="date" class="info-data" placeholder="2022-02-24">
+        <button (click)="createPayment()" class="btn">Add</button>
       </div>
       <div class="payments-history">
         <span>Payments history</span>
@@ -136,23 +136,6 @@
             fieldNames:['id', 'text', 'ammount', 'datum']}"></app-table>
 
       <app-pagination></app-pagination>
-
-<!--      <div class="house-table">-->
-<!--        <div class="counter-house-table-inner counter-house-table-inner__header">-->
-<!--          <div class="house-table-block house-table-block__25">id</div>-->
-<!--          <div class="house-table-block house-table-block__25">Payment text field</div>-->
-<!--          <div class="house-table-block house-table-block__25">Ammount</div>-->
-<!--          <div class="house-table-block house-table-block__right house-table-block__18">date</div>-->
-<!--        </div>-->
-<!--        <div class="house-counter">-->
-<!--          <div *ngFor="let payment of payments" class="counter-house-table-inner counter-house-table-inner__content">-->
-<!--            <div class="house-table-block house-table-block__left house-table-block__25">{{payment.id}}</div>-->
-<!--            <div class="house-table-block house-table-block__left house-table-block__25">{{payment.text}}-->
-<!--            </div>-->
-<!--            <div class="house-table-block house-table-block__left house-table-block__25">{{payment.ammount}}</div>-->
-<!--            <div class="house-table-block house-table-block__right house-table-block__18">{{payment.datum}}</div>-->
-<!--          </div>-->
-<!--        </div>-->
 
       </div>
 <!--      <div class="pagination">-->
