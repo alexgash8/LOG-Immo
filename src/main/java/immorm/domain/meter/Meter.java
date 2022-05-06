@@ -25,10 +25,10 @@ import java.util.Set;
 @Table(name = "meters")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
-//@JsonSubTypes({
-//        @JsonSubTypes.Type(value = AppartmentMeter.class, name = "AptMeter"),
-//        @JsonSubTypes.Type(value = HouseMeter.class, name = "HMeter")}
-//)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = AppartmentMeter.class, name = "AptMeter"),
+        @JsonSubTypes.Type(value = HouseMeter.class, name = "HMeter")}
+)
 public abstract class Meter {
 
     @Id

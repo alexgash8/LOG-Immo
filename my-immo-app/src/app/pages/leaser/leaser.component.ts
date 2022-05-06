@@ -6,57 +6,57 @@ import {ApiService} from "../../services/api.service";
   templateUrl: './leaser.component.html',
   styleUrls: ['./leaser.component.scss']
 })
-export class HouseComponent implements OnInit {
-  selectedHouse: number = 0;
-  newHouse: any = {
-    countAppartments: '',
-    city: '',
-    street: '',
-    house_Number: '',
-    postal_code: '',
-    insuranceNumber: ''
-  }
-  constructor(private api: ApiService) { }
-  async ngOnInit() {
-    await this.getHouses();
-  }
-  onChangeHouse(deviceValue: any) {
-    console.log(deviceValue, this.selectedHouse);
-    getAppartments();
-  }
-  async getHouses(){
-    this.houses = await this.api.house.get();
-  }
-
-  houses : any = [
-    {
-      id: 1,
-      countAppartments: 11,
-      insuranceNumber: 11,
-      address: {
-        id: 1,
-        city: 'kiev',
-        street: 11,
-        house_Number: 11,
-        appNumb: 11,
-        postal_code: 11
-      }
-    },
-    {
-      id: 2,
-      countAppartments: 22,
-      insuranceNumber: 22,
-      address: {
-        id: 2,
-        city: 'mariupol',
-        street: 22,
-        house_Number: 2,
-        appNumb: 2,
-        postal_code: 22
-      }
-    },
-  ];
-}
+// export class HouseComponent implements OnInit {
+//   selectedHouse: number = 0;
+//   newHouse: any = {
+//     countAppartments: '',
+//     city: '',
+//     street: '',
+//     house_Number: '',
+//     postal_code: '',
+//     insuranceNumber: ''
+//   }
+//   constructor(private api: ApiService) { }
+//   async ngOnInit() {
+//     await this.getHouses();
+//   }
+//   onChangeHouse(deviceValue: any) {
+//     console.log(deviceValue, this.selectedHouse);
+//     // getAppartments();
+//   }
+//   async getHouses(){
+//     this.houses = await this.api.house.get();
+//   }
+//
+//   houses : any = [
+//     {
+//       id: 1,
+//       countAppartments: 11,
+//       insuranceNumber: 11,
+//       address: {
+//         id: 1,
+//         city: 'kiev',
+//         street: 11,
+//         house_Number: 11,
+//         appNumb: 11,
+//         postal_code: 11
+//       }
+//     },
+//     {
+//       id: 2,
+//       countAppartments: 22,
+//       insuranceNumber: 22,
+//       address: {
+//         id: 2,
+//         city: 'mariupol',
+//         street: 22,
+//         house_Number: 2,
+//         appNumb: 2,
+//         postal_code: 22
+//       }
+//     },
+//   ];
+// }
 
 export class LeaserComponent implements OnInit {
   showPopUp: boolean = false;
@@ -73,7 +73,7 @@ export class LeaserComponent implements OnInit {
       id: 0,
       bankName: 'PostBank',
       iban: 'BE212335134646413',
-      bic: "1315646415 1346143646'
+      bic: '1315646415 1346143646'
     },
     lastAddress: {
       id:0,
