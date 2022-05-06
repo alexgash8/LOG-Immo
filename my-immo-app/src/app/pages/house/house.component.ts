@@ -80,7 +80,7 @@ export class HouseComponent implements OnInit {
   }
 
   async getMeterTypes(){
-    this
+    // this
   }
 
   async getMeters() {

@@ -247,6 +247,14 @@
         <path d="M25.3334 8.54675L23.4534 6.66675L16 14.1201L8.54669 6.66675L6.66669 8.54675L14.12 16.0001L6.66669 23.4534L8.54669 25.3334L16 17.8801L23.4534 25.3334L25.3334 23.4534L17.88 16.0001L25.3334 8.54675Z" fill="black"/>
       </svg>
       <div class="create-info-block">
+        <select [(ngModel)]="selectedHouse" (change)="onChangeHouse($event.target)" class="house__select" name="" id="">
+          <option *ngFor="let house of houses; let i = index" [value]="i">{{house.address.street}}
+            , {{house.address.houseNumber}}</option>
+        </select>
+        <!--          <button class="btn">Show</button>-->
+      </div>
+
+      <div class="create-info-block">
         <span class="notation">Vorname</span>
         <input [(ngModel)]="newLeaser.firstName" type="text" class="input-data-modal" placeholder="Oleksii">
       </div>
