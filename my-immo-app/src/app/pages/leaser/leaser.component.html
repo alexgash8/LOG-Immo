@@ -12,6 +12,27 @@
 
   <div class="house">
     <form action="">
+
+      <div class="house-top find">
+        <span class="span-house">Find house:</span>
+        <select [(ngModel)]="houseService.selectedHouse" (change)="onChangeHouse($event.target)" class="house__select" name="" id="">
+
+          <option *ngFor="let house of houseService.houses; let i = index" [value]="i">{{house.address.street}}
+            , {{house.address.houseNumber}}</option>
+        </select>
+        <!--          <button class="btn">Show</button>-->
+      </div>
+
+      <div class="house-top">
+        <span class="span-house">Appartment connected</span>
+        <select class="house__select" name="" id="">
+          <option value="">Appartment 1</option>
+          <option value="">Appartment 2</option>
+          <option value="">Appartment 3</option>
+        </select>
+        <button class="btn">Connect appartment to leaser</button>
+      </div>
+
       <div class="house-top">
         <div class="header-top">
           <span class="block-declaration">Leaser block</span>
@@ -21,10 +42,8 @@
       </div>
       <div class="house-top find">
         <span class="span-house">Select leaser:</span>
-        <select class="house__select" name="" id="">
-          <option value="">id Vorname Nachname LeuteZahl</option>
-          <option value="">id Vorname Nachname LeuteZahl</option>
-          <option value="">id Vorname Nachname LeuteZahl</option>
+        <select [(ngModel)]="selectedLeaser" (change)="onChangeLeaser($event.target)" class="house__select" name="" id="">
+          <option *ngFor="let leaser of leasers; let i = index" [value]="i">{{leaser.id}},{{leaser.type}},{{leaser.number}}</option>
         </select>
         <button class="btn">Show</button>
       </div>
@@ -79,24 +98,8 @@
       </div>
       <button class="btn">Save changes</button>
     </div>
-    <div class="house-top find">
-      <span class="span-house">Find house</span>
-      <select class="house__select" name="" id="">
-        <option value="">1</option>
-        <option value="">2</option>
-        <option value="">3</option>
-      </select>
-      <button class="btn">Show</button>
-    </div>
-    <div class="house-top">
-      <span class="span-house">Appartment connected</span>
-      <select class="house__select" name="" id="">
-        <option value="">Appartment 1</option>
-        <option value="">Appartment 2</option>
-        <option value="">Appartment 3</option>
-      </select>
-      <button class="btn">Connect appartment to leaser</button>
-    </div>
+
+
     <span class="span-house">Last adress</span>
     <div class="appartment-info appartment-info-long appartment-info-input">
       <div class="info-block">

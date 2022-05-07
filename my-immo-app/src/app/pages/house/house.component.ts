@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HouseService } from 'src/app/services/house.service'
 import { ApiService} from 'src/app/services/api.service';
 
 @Component({
@@ -8,26 +9,16 @@ import { ApiService} from 'src/app/services/api.service';
 })
 
 export class HouseComponent implements OnInit {
-  selectedHouse: number = 0;
+
   selectedMeterType: any = '';
   selectedMeter: number = 0;
   showPopUp: boolean = false;
-
 
   newPayment: any = {
     id: '',
     text: '',
     amount: '',
     datum: ''
-  }
-
-  newHouse: any = {
-    countAppartments: '',
-    city: '',
-    street: '',
-    house_Number: '',
-    postal_code: '',
-    insuranceNumber: ''
   }
 
   newHistory: any = {
@@ -46,10 +37,10 @@ export class HouseComponent implements OnInit {
     meter_type: ''
   }
 
-  constructor(private api: ApiService) { }
+  constructor(public houseService : HouseService, private api: ApiService) { }
 
   async ngOnInit() {
-    await this.getHouses();
+    await this.houseService.getHouses();
   }
 
   openPopUp() {
@@ -60,9 +51,16 @@ export class HouseComponent implements OnInit {
   }
 
   onChangeHouse(deviceValue: any) {
-    console.log(deviceValue, this.selectedHouse);
+    // console.log(deviceValue, this.selectedHouse);
     this.getMeters();
     this.getPayments();
+  }
+
+
+
+  async onCreateHouse() {
+    await this.houseService.createHouse();
+    this.closePopUp();
   }
 
   onChangeMeterType(deviceValue: any) {
@@ -74,12 +72,8 @@ export class HouseComponent implements OnInit {
     this.getHistories();
   }
 
-  async getHouses(){
-    this.houses = await this.api.house.get();
-  }
-
   async getMeters() {
-    this.meters = await this.api.meter.get(this.houses[this.selectedHouse].id);
+    this.meters = await this.api.meter.get(this.houseService.houses[this.houseService.selectedHouse].id);
   }
 
   async getHistories() {
@@ -87,7 +81,7 @@ export class HouseComponent implements OnInit {
   }
 
   async getPayments() {
-    this.payments = await this.api.payment.get(this.houses[this.selectedHouse].id);
+    this.payments = await this.api.payment.get(this.houseService.houses[this.houseService.selectedHouse].id);
   }
 
   async createHistory() {
@@ -114,61 +108,14 @@ export class HouseComponent implements OnInit {
       meter_type: this.newMeter.meter_type,
       number: this.newMeter.number,
       house: {
-        id: this.newHouse.id
+        id: this.houseService.newHouse.id
       }
     }
     await this.api.meter.add(newMeter);
     this.getMeters();
   }
 
-  async createHouse(){
-    this.closePopUp();
-    const newHouse = {
-      countAppartments: this.newHouse.countAppartments,
-      insuranceNumber: this.newHouse.insuranceNumber,
-      address: {
-        id: 0,
-        type: 'HOUSE',
-        street: this.newHouse.street,
-        city: this.newHouse.city,
-        houseNumber: this.newHouse.house_Number,
-        appNumb: this.newHouse.appNumb,
-        postalCode: this.newHouse.postal_code
-      }
-    };
-    const answer = await this.api.house.add(newHouse);
-    console.log('data:', this.newHouse);
-    this.getHouses();
-  }
 
-  houses : any = [
-    {
-      id: 1,
-      countAppartments: 11,
-      insuranceNumber: 11,
-      address: {
-        id: 1,
-        city: 'kiev',
-        street: 11,
-        house_Number: 11,
-        appNumb: 11,
-        postal_code: 11
-      }
-    },
-    {
-      id: 2,
-      countAppartments: 22,
-      insuranceNumber: 22,
-      address: {
-        id: 2,
-        city: 'mariupol',
-        street: 22,
-        house_Number: 2,
-        appNumb: 2,
-        postal_code: 22
-      }
-    },
-  ];
 
   histories : any = [
     {
@@ -185,7 +132,6 @@ export class HouseComponent implements OnInit {
       ammount : '111',
       datum: '22-22-2222'
     },
-
   ]
 
   meterTypes : any = [

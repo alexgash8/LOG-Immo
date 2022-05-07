@@ -1,64 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../../services/api.service";
+import { HouseService } from 'src/app/services/house.service'
 
 @Component({
   selector: 'app-leaser',
   templateUrl: './leaser.component.html',
   styleUrls: ['./leaser.component.scss']
 })
-// export class HouseComponent implements OnInit {
-//   selectedHouse: number = 0;
-//   newHouse: any = {
-//     countAppartments: '',
-//     city: '',
-//     street: '',
-//     house_Number: '',
-//     postal_code: '',
-//     insuranceNumber: ''
-//   }
-//   constructor(private api: ApiService) { }
-//   async ngOnInit() {
-//     await this.getHouses();
-//   }
-//   onChangeHouse(deviceValue: any) {
-//     console.log(deviceValue, this.selectedHouse);
-//     // getAppartments();
-//   }
-//   async getHouses(){
-//     this.houses = await this.api.house.get();
-//   }
-//
-//   houses : any = [
-//     {
-//       id: 1,
-//       countAppartments: 11,
-//       insuranceNumber: 11,
-//       address: {
-//         id: 1,
-//         city: 'kiev',
-//         street: 11,
-//         house_Number: 11,
-//         appNumb: 11,
-//         postal_code: 11
-//       }
-//     },
-//     {
-//       id: 2,
-//       countAppartments: 22,
-//       insuranceNumber: 22,
-//       address: {
-//         id: 2,
-//         city: 'mariupol',
-//         street: 22,
-//         house_Number: 2,
-//         appNumb: 2,
-//         postal_code: 22
-//       }
-//     },
-//   ];
-// }
 
 export class LeaserComponent implements OnInit {
+  selectedHouse: number = 0;
   showPopUp: boolean = false;
   selectedLeaser: number = 0;
   newLeaser: any = {
@@ -105,7 +56,12 @@ export class LeaserComponent implements OnInit {
       }
     ]
   }
-  constructor() { }
+
+  leasers : any = [
+    {}, {}
+  ]
+
+  constructor(public houseService : HouseService, private api: ApiService) { }
 
   ngOnInit(): void {
   }
@@ -120,4 +76,71 @@ export class LeaserComponent implements OnInit {
     console.log('data:', this.newLeaser);
   }
 
+  onChangeLeaser(deviceValue: any) {
+    console.log(deviceValue, this.selectedLeaser);
+
+  }
+
+  onChangeHouse(deviceValue: any) {
+    // console.log(deviceValue, this.selectedHouse);
+    // this.getAppartments();
+  }
+
 }
+//
+// class HouseComponent {
+//   newHouse: any = {
+//     countAppartments: '',
+//     city: '',
+//     street: '',
+//     house_Number: '',
+//     postal_code: '',
+//     insuranceNumber: ''
+//   }
+//   constructor(private api: ApiService) { }
+//   async ngOnInit() {
+//     await this.getHouses();
+//   }
+//
+//   onChangeHouse(deviceValue: any) {
+//     console.log(deviceValue, this.selectedHouse);
+//     // getAppartments();
+//   }
+//
+//
+//
+//   async getHouses(){
+//     this.houses = await this.api.house.get();
+//   }
+//
+//   houses : any = [
+//     {
+//       id: 1,
+//       countAppartments: 11,
+//       insuranceNumber: 11,
+//       address: {
+//         id: 1,
+//         city: 'kiev',
+//         street: 11,
+//         house_Number: 11,
+//         appNumb: 11,
+//         postal_code: 11
+//       }
+//     },
+//     {
+//       id: 2,
+//       countAppartments: 22,
+//       insuranceNumber: 22,
+//       address: {
+//         id: 2,
+//         city: 'mariupol',
+//         street: 22,
+//         house_Number: 2,
+//         appNumb: 2,
+//         postal_code: 22
+//       }
+//     },
+//   ];
+// }
+
+

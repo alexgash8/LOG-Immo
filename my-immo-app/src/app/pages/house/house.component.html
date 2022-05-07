@@ -21,42 +21,42 @@
       </div>
       <div class="house-top find">
         <span class="span-house">Find house:</span>
-        <select [(ngModel)]="selectedHouse" (change)="onChangeHouse($event.target)" class="house__select" name="" id="">
+        <select [(ngModel)]="houseService.selectedHouse" (change)="onChangeHouse($event.target)" class="house__select" name="" id="">
 
-          <option *ngFor="let house of houses; let i = index" [value]="i">{{house.address.street}}
+          <option *ngFor="let house of houseService.houses; let i = index" [value]="i">{{house.address.street}}
             , {{house.address.houseNumber}}</option>
         </select>
         <!--          <button class="btn">Show</button>-->
       </div>
-      <div *ngIf="houses.length != 0" class="house-info">
+      <div *ngIf="houseService.houses.length != 0" class="house-info">
         <div class="info-block">
           <span class="notation">ID</span>
-          <div class="info-data short">{{houses[selectedHouse].id}}</div>
+          <div class="info-data short">{{houseService.houses[houseService.selectedHouse].id}}</div>
         </div>
         <div class="info-block">
           <span class="notation">City</span>
-          <div class="info-data middle">{{houses[selectedHouse].address.city}}</div>
+          <div class="info-data middle">{{houseService.houses[houseService.selectedHouse].address.city}}</div>
         </div>
         <div class="info-block">
           <span class="notation">Street</span>
-          <div class="info-data long">{{houses[selectedHouse].address.street}}</div>
+          <div class="info-data long">{{houseService.houses[houseService.selectedHouse].address.street}}</div>
         </div>
         <div class="info-block">
           <span class="notation">Number</span>
-          <div class="info-data short">{{houses[selectedHouse].address.houseNumber}}</div>
+          <div class="info-data short">{{houseService.houses[houseService.selectedHouse].address.houseNumber}}</div>
         </div>
         <div class="info-block">
           <span class="notation">PLZ</span>
-          <div class="info-data short">{{houses[selectedHouse].address.postalCode}}</div>
+          <div class="info-data short">{{houseService.houses[houseService.selectedHouse].address.postalCode}}</div>
         </div>
         <div class="info-block">
           <span class="notation">Insurance number</span>
-          <div class="info-data long">{{houses[selectedHouse].insuranceNumber}}</div>
+          <div class="info-data long">{{houseService.houses[houseService.selectedHouse].insuranceNumber}}</div>
         </div>
       </div>
     </div>
 
-    <div *ngIf="houses.length != 0">
+    <div *ngIf="houseService.houses.length != 0">
       <div class="house-inner">
         <div class="header-top">
           <span class="block-declaration">Counter block</span>
@@ -174,31 +174,31 @@
 
       <div class="create-info-block">
         <span class="notation">Count appartments</span>
-        <input [(ngModel)]="newHouse.countAppartments" type="number" class="input-data-modal" placeholder="17">
+        <input [(ngModel)]="houseService.newHouse.countAppartments" type="number" class="input-data-modal" placeholder="17">
       </div>
 
       <div class="create-info-block">
         <span class="notation">City</span>
-        <input [(ngModel)]="newHouse.city" type="text" class="input-data-modal" placeholder="Hamburg">
+        <input [(ngModel)]="houseService.newHouse.city" type="text" class="input-data-modal" placeholder="Hamburg">
       </div>
       <div class="create-info-block">
         <span class="notation">Street</span>
-        <input [(ngModel)]="newHouse.street" type="text" class="input-data-modal" placeholder="Holsteiner Chaussee">
+        <input [(ngModel)]="houseService.newHouse.street" type="text" class="input-data-modal" placeholder="Holsteiner Chaussee">
       </div>
       <div class="create-info-block">
         <span class="notation">Number</span>
-        <input [(ngModel)]="newHouse.house_Number" type="text" class="input-data-modal" placeholder="171">
+        <input [(ngModel)]="houseService.newHouse.house_Number" type="text" class="input-data-modal" placeholder="171">
       </div>
       <div class="create-info-block">
         <span class="notation">PLZ</span>
-        <input [(ngModel)]="newHouse.postal_code" type="text" class="input-data-modal" placeholder="22457">
+        <input [(ngModel)]="houseService.newHouse.postal_code" type="text" class="input-data-modal" placeholder="22457">
       </div>
       <div class="create-info-block">
         <span class="notation">Insurance number</span>
-        <input [(ngModel)]="newHouse.insuranceNumber" type="text" class="input-data-modal" placeholder="750">
+        <input [(ngModel)]="houseService.newHouse.insuranceNumber" type="text" class="input-data-modal" placeholder="750">
       </div>
 
-      <button (click)="createHouse()" class="btn-modal">Create House</button>
+      <button (click)="houseService.createHouse()" class="btn-modal">Create House</button>
     </div>
   </div>
 </div>
